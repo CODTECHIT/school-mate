@@ -2,21 +2,38 @@
   <div class="section-container">
     <div class="section-header">
       <span class="section-badge">School Management Software</span>
-      <h2>Why SchoolMate is <span class="highlight">Most Trusted</span> School ERP Software?</h2>
-      <p>Powerful features designed to make school administration simple, secure, and efficient.</p>
+      <h2><span class="highlight">All Features</span></h2>
+      <p>
+        Complete feature suite for school administration, academics, communication, transport, and
+        finance.
+      </p>
     </div>
 
     <div class="features-grid">
-      <div class="feature-card" *ngFor="let feature of features">
+      <div class="feature-card" *ngFor="let feature of visibleFeatures">
         <div class="feature-icon">
           <span class="material-icon">{{ feature.icon }}</span>
         </div>
         <h3>{{ feature.title }}</h3>
         <p>{{ feature.description }}</p>
         <div class="feature-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
         </div>
       </div>
+    </div>
+
+    <div class="features-cta" *ngIf="showViewAllButton">
+      <a routerLink="/features" class="view-all-btn">View All Features</a>
     </div>
   </div>
 </section>

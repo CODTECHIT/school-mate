@@ -45,6 +45,32 @@ import { CtaComponent } from '../../components/cta/cta.component';
 
             <div class="social-note">
               <strong>Connect with us on social media:</strong>
+              <div class="social-links">
+                <a
+                  href="https://www.youtube.com/@schoolmate-erp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >YouTube</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/schoolmate-erp-software-68b651320/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+                <a
+                  href="https://www.instagram.com/schoolmate_erp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+                <a
+                  href="https://www.facebook.com/people/Schoolmate-ERP-Software/61563897116374/?sk=about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Facebook</a
+                >
+              </div>
             </div>
           </div>
 
@@ -112,7 +138,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
 
       .contact-section {
         padding: 100px 24px;
-        background: #f8f9fc;
+        background: radial-gradient(circle at 15% 20%, #eef4ff 0%, #f8f9fc 45%, #f4f0ff 100%);
       }
       .contact-container {
         max-width: 1200px;
@@ -122,12 +148,13 @@ import { CtaComponent } from '../../components/cta/cta.component';
         display: grid;
         grid-template-columns: 1fr 1.5fr;
         gap: 40px;
+        align-items: start;
       }
 
       .contact-info-card {
         --accent-start: #2f6fe0;
         --accent-end: #4f46e5;
-        background: white;
+        background: linear-gradient(160deg, #ffffff, #f8fbff);
         padding: 40px;
         border-radius: 20px;
         border: 1px solid color-mix(in srgb, var(--accent-start) 16%, transparent);
@@ -146,16 +173,46 @@ import { CtaComponent } from '../../components/cta/cta.component';
       }
       .contact-info-card h3 {
         font-size: 1.8rem;
-        margin-bottom: 16px;
+        margin: 0 0 12px;
         color: #1a2a4a;
       }
       .contact-info-card p {
-        color: #666;
-        margin-bottom: 30px;
+        color: #5c6782;
+        margin-bottom: 24px;
+        line-height: 1.6;
       }
       .social-note {
-        margin-top: 16px;
+        margin-top: 8px;
+        font-size: 0.9rem;
         color: #1a2a4a;
+      }
+
+      .social-links {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--accent-start);
+        text-decoration: none;
+        background: color-mix(in srgb, var(--accent-start) 10%, white);
+        border: 1px solid color-mix(in srgb, var(--accent-start) 20%, transparent);
+        transition: all 0.25s ease;
+      }
+
+      .social-links a:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #2856a3, #5b2d8e);
+        border-color: transparent;
+        transform: translateY(-1px);
       }
 
       .info-list {
@@ -165,27 +222,49 @@ import { CtaComponent } from '../../components/cta/cta.component';
       .info-list li {
         display: flex;
         gap: 16px;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         align-items: flex-start;
+        padding: 10px 10px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          color-mix(in srgb, var(--accent-start) 8%, white)
+        );
+        border: 1px solid color-mix(in srgb, var(--accent-start) 12%, transparent);
       }
       .info-list .material-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--accent-start) 18%, white),
+          color-mix(in srgb, var(--accent-end) 12%, white)
+        );
         color: var(--accent-start);
-        font-size: 24px;
+        font-size: 18px;
+        margin-top: 2px;
       }
       .info-list strong {
         display: block;
         color: #1a2a4a;
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
       }
       .info-list p {
         margin: 0;
-        font-size: 0.95rem;
+        font-size: 0.86rem;
+        line-height: 1.45;
       }
 
       .contact-form-card {
         --accent-start: #8b5cf6;
         --accent-end: #7c3aed;
-        background: white;
+        background: linear-gradient(160deg, #ffffff, #fcfaff);
         padding: 40px;
         border-radius: 20px;
         border: 1px solid color-mix(in srgb, var(--accent-start) 16%, transparent);
@@ -203,12 +282,13 @@ import { CtaComponent } from '../../components/cta/cta.component';
         );
       }
       .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
       }
       .form-group label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         font-weight: 600;
+        font-size: 0.88rem;
         color: #1a2a4a;
       }
       .form-group input,
@@ -216,7 +296,8 @@ import { CtaComponent } from '../../components/cta/cta.component';
         width: 100%;
         padding: 12px 16px;
         border: 1px solid color-mix(in srgb, var(--accent-start) 16%, #ddd);
-        border-radius: 10px;
+        border-radius: 12px;
+        background: #fff;
         font-family: inherit;
         transition: all 0.25s ease;
       }
@@ -232,13 +313,15 @@ import { CtaComponent } from '../../components/cta/cta.component';
         background: linear-gradient(135deg, #2856a3, #5b2d8e);
         color: white;
         border: none;
-        border-radius: 10px;
+        border-radius: 12px;
         font-weight: 700;
         cursor: pointer;
+        letter-spacing: 0.4px;
+        box-shadow: 0 10px 22px rgba(40, 86, 163, 0.25);
         transition: 0.3s;
       }
       .btn-submit:hover {
-        opacity: 0.9;
+        filter: brightness(1.05);
         transform: translateY(-2px);
       }
 

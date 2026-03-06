@@ -294,61 +294,66 @@
 .stat-card {
   --accent-start: #f5b731;
   --accent-end: #2ead6d;
-  background: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07));
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid color-mix(in srgb, var(--accent-start) 30%, rgba(255, 255, 255, 0.2));
   border-radius: 16px;
   padding: 24px;
   display: flex;
   align-items: center;
   gap: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 22px rgba(11, 23, 52, 0.2);
+  box-shadow: 0 10px 24px rgba(9, 18, 42, 0.24);
 }
 
 .stat-card:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.34);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-start) 14%, rgba(255, 255, 255, 0.14)),
+    color-mix(in srgb, var(--accent-end) 10%, rgba(255, 255, 255, 0.08))
+  );
+  border-color: color-mix(in srgb, var(--accent-start) 45%, rgba(255, 255, 255, 0.3));
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(11, 23, 52, 0.28);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--accent-start) 26%, rgba(9, 18, 42, 0.35));
 }
 
 .stat-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
-  border: 1px solid color-mix(in srgb, var(--accent-start) 24%, rgba(255, 255, 255, 0.28));
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  border: 1px solid color-mix(in srgb, var(--accent-start) 45%, rgba(255, 255, 255, 0.3));
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 10px 18px color-mix(in srgb, var(--accent-start) 35%, transparent);
 }
 
 .material-icon {
   font-family: 'Material Icons';
-  font-size: 24px;
-  color: var(--accent-start);
+  font-size: 22px;
+  color: #fff;
 }
 
 .stat-card:nth-child(1) {
   --accent-start: #f59e0b;
-  --accent-end: #f97316;
+  --accent-end: #fb7185;
 }
 
 .stat-card:nth-child(2) {
-  --accent-start: #2f6fe0;
-  --accent-end: #4f46e5;
+  --accent-start: #3b82f6;
+  --accent-end: #6366f1;
 }
 
 .stat-card:nth-child(3) {
-  --accent-start: #22c55e;
-  --accent-end: #16a34a;
+  --accent-start: #14b8a6;
+  --accent-end: #22c55e;
 }
 
 .stat-card:nth-child(4) {
   --accent-start: #ec4899;
-  --accent-end: #be185d;
+  --accent-end: #8b5cf6;
 }
 
 .stat-value {
@@ -361,7 +366,7 @@
 
 .stat-label {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.78);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;

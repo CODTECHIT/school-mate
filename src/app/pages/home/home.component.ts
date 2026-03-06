@@ -28,7 +28,7 @@ import { SolutionComponent } from '../../components/solution/solution.component'
   ],
   template: `
     <app-hero></app-hero>
-    <app-features></app-features>
+    <app-features [maxItems]="8" [showViewAllButton]="true"></app-features>
     <app-solution></app-solution>
     <app-about></app-about>
     <app-integrations></app-integrations>
