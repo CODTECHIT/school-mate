@@ -32,7 +32,7 @@ export class ShowcaseComponent implements OnInit, OnDestroy {
       description: 'Role-based experience for students, teachers, and parents.',
     },
     {
-      src: 'home_banner.png',
+      src: 'images/home_banner.png',
       title: 'School Overview',
       description: 'Clean interface built for complete school operations.',
     },
