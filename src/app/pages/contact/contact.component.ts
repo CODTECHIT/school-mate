@@ -125,16 +125,24 @@ import { CtaComponent } from '../../components/cta/cta.component';
       }
 
       .contact-info-card {
+        --accent-start: #2f6fe0;
+        --accent-end: #4f46e5;
         background: white;
         padding: 40px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid color-mix(in srgb, var(--accent-start) 16%, transparent);
+        box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-start) 12%, transparent);
         transition: all 0.3s ease;
       }
       .contact-info-card:hover {
-        border-color: rgba(40, 86, 163, 0.2);
-        box-shadow: 0 16px 34px rgba(40, 86, 163, 0.12);
-        background: linear-gradient(135deg, #ffffff, #f5f9ff);
+        border-color: color-mix(in srgb, var(--accent-start) 35%, transparent);
+        box-shadow: 0 16px 34px color-mix(in srgb, var(--accent-start) 22%, transparent);
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          color-mix(in srgb, var(--accent-start) 9%, white),
+          color-mix(in srgb, var(--accent-end) 8%, white)
+        );
       }
       .contact-info-card h3 {
         font-size: 1.8rem;
@@ -161,7 +169,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
         align-items: flex-start;
       }
       .info-list .material-icon {
-        color: #2856a3;
+        color: var(--accent-start);
         font-size: 24px;
       }
       .info-list strong {
@@ -175,15 +183,24 @@ import { CtaComponent } from '../../components/cta/cta.component';
       }
 
       .contact-form-card {
+        --accent-start: #8b5cf6;
+        --accent-end: #7c3aed;
         background: white;
         padding: 40px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid color-mix(in srgb, var(--accent-start) 16%, transparent);
+        box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-start) 12%, transparent);
         transition: all 0.3s ease;
       }
       .contact-form-card:hover {
-        box-shadow: 0 16px 34px rgba(40, 86, 163, 0.12);
-        background: linear-gradient(135deg, #ffffff, #f7fbff);
+        border-color: color-mix(in srgb, var(--accent-start) 35%, transparent);
+        box-shadow: 0 16px 34px color-mix(in srgb, var(--accent-start) 22%, transparent);
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          color-mix(in srgb, var(--accent-start) 9%, white),
+          color-mix(in srgb, var(--accent-end) 8%, white)
+        );
       }
       .form-group {
         margin-bottom: 20px;
@@ -198,9 +215,16 @@ import { CtaComponent } from '../../components/cta/cta.component';
       .form-group textarea {
         width: 100%;
         padding: 12px 16px;
-        border: 1px solid #ddd;
+        border: 1px solid color-mix(in srgb, var(--accent-start) 16%, #ddd);
         border-radius: 10px;
         font-family: inherit;
+        transition: all 0.25s ease;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: color-mix(in srgb, var(--accent-start) 46%, transparent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-start) 18%, transparent);
       }
       .btn-submit {
         width: 100%;

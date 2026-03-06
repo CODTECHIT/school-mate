@@ -78,21 +78,29 @@
 }
 
 .role-card {
-  background: #f8f9fc;
+  --accent-start: #2856a3;
+  --accent-end: #5b2d8e;
+  --accent-soft: rgba(40, 86, 163, 0.08);
+  background: color-mix(in srgb, var(--accent-start) 5%, #f8f9fc);
   padding: 16px 20px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 12px;
   transition: all 0.3s ease;
-  border: 1px solid #eee;
+  border: 1px solid color-mix(in srgb, var(--accent-start) 14%, #e8ebf3);
 }
 
 .role-card:hover {
-  background: linear-gradient(135deg, #ffffff, #f3f8ff);
-  border-color: #2856a3;
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    color-mix(in srgb, var(--accent-start) 11%, white),
+    color-mix(in srgb, var(--accent-end) 9%, white)
+  );
+  border-color: color-mix(in srgb, var(--accent-start) 44%, transparent);
   transform: translateX(5px);
-  box-shadow: 0 8px 18px rgba(40, 86, 163, 0.14);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-start) 25%, transparent);
 }
 
 .role-card:active {
@@ -100,7 +108,7 @@
 }
 
 .role-card .material-icon {
-  color: #2856a3;
+  color: var(--accent-start);
   font-size: 1.2rem;
 }
 
@@ -108,6 +116,30 @@
   font-weight: 600;
   color: #1a2a4a;
   font-size: 0.95rem;
+}
+
+.role-card:nth-child(1) {
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+  --accent-soft: rgba(47, 111, 224, 0.12);
+}
+
+.role-card:nth-child(2) {
+  --accent-start: #0ea5e9;
+  --accent-end: #0284c7;
+  --accent-soft: rgba(14, 165, 233, 0.12);
+}
+
+.role-card:nth-child(3) {
+  --accent-start: #f59e0b;
+  --accent-end: #f97316;
+  --accent-soft: rgba(245, 158, 11, 0.13);
+}
+
+.role-card:nth-child(4) {
+  --accent-start: #22c55e;
+  --accent-end: #16a34a;
+  --accent-soft: rgba(34, 197, 94, 0.12);
 }
 
 @keyframes float {
@@ -155,17 +187,21 @@
   }
 
   .role-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .role-card {
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 10px 8px;
+    gap: 8px;
     border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
   }
 
   .role-card span {
-    font-size: 0.88rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 
   .solution-content h2 {

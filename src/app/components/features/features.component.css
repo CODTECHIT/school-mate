@@ -57,6 +57,9 @@
 }
 
 .feature-card {
+  --accent-start: #2856a3;
+  --accent-end: #5b2d8e;
+  --accent-soft: rgba(40, 86, 163, 0.1);
   background: #fff;
   border-radius: 20px;
   padding: 32px 24px;
@@ -71,7 +74,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(40, 86, 163, 0.06), rgba(91, 45, 142, 0.05));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-start) 8%, transparent),
+    color-mix(in srgb, var(--accent-end) 9%, transparent)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -84,15 +91,15 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #2856a3, #5b2d8e);
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(40, 86, 163, 0.15);
-  border-color: rgba(40, 86, 163, 0.2);
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--accent-start) 28%, transparent);
+  border-color: color-mix(in srgb, var(--accent-start) 30%, transparent);
 }
 
 .feature-card:hover::before {
@@ -111,7 +118,11 @@
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(40, 86, 163, 0.08), rgba(91, 45, 142, 0.08));
+  background: linear-gradient(
+    135deg,
+    var(--accent-soft),
+    color-mix(in srgb, var(--accent-end) 12%, transparent)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,13 +131,13 @@
 }
 
 .feature-card:hover .feature-icon {
-  background: linear-gradient(135deg, #2856a3, #5b2d8e);
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
 }
 
 .material-icon {
   font-family: 'Material Icons';
   font-size: 28px;
-  color: #2856a3;
+  color: var(--accent-start);
   transition: color 0.3s ease;
 }
 
@@ -155,7 +166,55 @@
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
-  color: #2856a3;
+  color: var(--accent-start);
+}
+
+.feature-card:nth-child(1) {
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+  --accent-soft: rgba(47, 111, 224, 0.12);
+}
+
+.feature-card:nth-child(2) {
+  --accent-start: #0ea5e9;
+  --accent-end: #0284c7;
+  --accent-soft: rgba(14, 165, 233, 0.12);
+}
+
+.feature-card:nth-child(3) {
+  --accent-start: #f59e0b;
+  --accent-end: #f97316;
+  --accent-soft: rgba(245, 158, 11, 0.13);
+}
+
+.feature-card:nth-child(4) {
+  --accent-start: #0ea5a4;
+  --accent-end: #0f766e;
+  --accent-soft: rgba(14, 165, 164, 0.13);
+}
+
+.feature-card:nth-child(5) {
+  --accent-start: #8b5cf6;
+  --accent-end: #7c3aed;
+  --accent-soft: rgba(139, 92, 246, 0.13);
+}
+
+.feature-card:nth-child(6) {
+  --accent-start: #22c55e;
+  --accent-end: #16a34a;
+  --accent-soft: rgba(34, 197, 94, 0.12);
+}
+
+.feature-card:nth-child(7) {
+  --accent-start: #2563eb;
+  --accent-end: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+}
+
+.feature-card:nth-child(8) {
+  --accent-start: #ec4899;
+  --accent-end: #be185d;
+  --accent-soft: rgba(236, 72, 153, 0.12);
 }
 
 .feature-card:hover .feature-arrow {
@@ -206,10 +265,19 @@
 
 @media (max-width: 480px) {
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .feature-card {
     padding: 16px 12px;
+  }
+
+  .feature-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .feature-card p {
+    font-size: 0.76rem;
   }
 }

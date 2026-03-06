@@ -292,28 +292,33 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  --accent-start: #f5b731;
+  --accent-end: #2ead6d;
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 16px;
   padding: 24px;
   display: flex;
   align-items: center;
   gap: 16px;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 22px rgba(11, 23, 52, 0.2);
 }
 
 .stat-card:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(245, 183, 49, 0.12));
-  border-color: rgba(245, 183, 49, 0.35);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.34);
   transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(11, 23, 52, 0.28);
 }
 
 .stat-icon-wrap {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(245, 183, 49, 0.2), rgba(46, 173, 109, 0.2));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
+  border: 1px solid color-mix(in srgb, var(--accent-start) 24%, rgba(255, 255, 255, 0.28));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +328,27 @@
 .material-icon {
   font-family: 'Material Icons';
   font-size: 24px;
-  color: #f5b731;
+  color: var(--accent-start);
+}
+
+.stat-card:nth-child(1) {
+  --accent-start: #f59e0b;
+  --accent-end: #f97316;
+}
+
+.stat-card:nth-child(2) {
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+}
+
+.stat-card:nth-child(3) {
+  --accent-start: #22c55e;
+  --accent-end: #16a34a;
+}
+
+.stat-card:nth-child(4) {
+  --accent-start: #ec4899;
+  --accent-end: #be185d;
 }
 
 .stat-value {

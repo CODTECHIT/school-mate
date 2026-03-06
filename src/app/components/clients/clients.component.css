@@ -82,6 +82,8 @@
 }
 
 .logo-item {
+  --accent-start: #2856a3;
+  --accent-end: #5b2d8e;
   flex-shrink: 0;
   width: 190px;
   height: 100px;
@@ -92,14 +94,19 @@
   border-radius: 14px;
   padding: 12px 16px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(40, 86, 163, 0.06);
+  border: 1px solid color-mix(in srgb, var(--accent-start) 14%, transparent);
 }
 
 .logo-item:hover {
   transform: scale(1.08);
-  box-shadow: 0 8px 24px rgba(40, 86, 163, 0.1);
-  border-color: rgba(40, 86, 163, 0.25);
-  background: linear-gradient(135deg, #fff, #f2f7ff);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-start) 22%, transparent);
+  border-color: color-mix(in srgb, var(--accent-start) 35%, transparent);
+  background: linear-gradient(
+    135deg,
+    #fff,
+    color-mix(in srgb, var(--accent-start) 10%, white),
+    color-mix(in srgb, var(--accent-end) 8%, white)
+  );
 }
 
 .logo-item img {
@@ -122,18 +129,24 @@
 }
 
 .testimonial-card {
-  background: linear-gradient(135deg, #f8f9fc, #fff);
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-start) 8%, white), #fff);
   border-radius: 20px;
   padding: 40px;
   position: relative;
-  border: 1px solid rgba(40, 86, 163, 0.06);
+  border: 1px solid color-mix(in srgb, var(--accent-start) 16%, transparent);
   transition: all 0.3s ease;
 }
 
 .testimonial-card:hover {
-  border-color: rgba(40, 86, 163, 0.25);
-  box-shadow: 0 12px 30px rgba(40, 86, 163, 0.12);
-  background: linear-gradient(135deg, #f3f7ff, #ffffff);
+  border-color: color-mix(in srgb, var(--accent-start) 38%, transparent);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-start) 26%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-start) 15%, white),
+    color-mix(in srgb, var(--accent-end) 10%, white)
+  );
 }
 
 .quote-icon {
@@ -161,7 +174,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2856a3, #5b2d8e);
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,9 +240,44 @@
 }
 
 .dot.active {
-  background: #2856a3;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
   width: 28px;
   border-radius: 5px;
+}
+
+.logo-item:nth-child(4n + 1) {
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+}
+
+.logo-item:nth-child(4n + 2) {
+  --accent-start: #0ea5e9;
+  --accent-end: #0284c7;
+}
+
+.logo-item:nth-child(4n + 3) {
+  --accent-start: #f59e0b;
+  --accent-end: #f97316;
+}
+
+.logo-item:nth-child(4n + 4) {
+  --accent-start: #22c55e;
+  --accent-end: #16a34a;
+}
+
+.testimonials .testimonial-card:nth-child(3n + 1) {
+  --accent-start: #2f6fe0;
+  --accent-end: #4f46e5;
+}
+
+.testimonials .testimonial-card:nth-child(3n + 2) {
+  --accent-start: #8b5cf6;
+  --accent-end: #7c3aed;
+}
+
+.testimonials .testimonial-card:nth-child(3n + 3) {
+  --accent-start: #ec4899;
+  --accent-end: #be185d;
 }
 
 @media (max-width: 768px) {
