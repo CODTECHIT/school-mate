@@ -1,0 +1,11 @@
+<section class="stats" id="stats-section">
+  <div class="stats-container">
+    <div class="stat-item" *ngFor="let stat of stats; let i = index">
+      <div class="stat-icon-wrap">
+        <span class="material-icon">{{ stat.icon }}</span>
+      </div>
+      <div class="stat-number">{{ animatedValues[i] | number }}{{ stat.suffix }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</section>

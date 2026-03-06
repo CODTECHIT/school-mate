@@ -1,0 +1,33 @@
+<section class="solution" id="solution">
+  <div class="solution-container">
+    <div class="solution-visual">
+      <div class="laptop-container">
+        <img src="laptop.png" alt="School ERP Software on Laptop" class="laptop-img">
+        <div class="visual-badge">
+          <span class="material-icon">laptop_mac</span>
+          <div>
+            <strong>Laptop</strong>
+            <small>For Everyone</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-content">
+      <span class="section-badge">Solution</span>
+      <h2>All-In-One <span class="highlight">Smart Solution</span></h2>
+      <p class="section-desc">
+        SchoolMate allows you to create/add unlimited staff, students and teachers. 
+        SchoolMate provides unique username and password for every registered person/account. 
+        Everyone can login using their username and password on our school management software.
+      </p>
+
+      <div class="role-grid">
+        <div class="role-card" *ngFor="let role of roles">
+          <span class="material-icon">admin_panel_settings</span>
+          <span>{{ role }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

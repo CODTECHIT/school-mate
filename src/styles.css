@@ -1,0 +1,69 @@
+/* Global Styles */
+:root {
+    --primary-blue: #2856A3;
+    --secondary-purple: #5B2D8E;
+    --accent-green: #2EAD6D;
+    --accent-gold: #F5B731;
+    --accent-red: #D42B5B;
+    --text-dark: #1a2a4a;
+    --text-gray: #666;
+    --bg-light: #f8f9fc;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Scroll Snap */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Transitions */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Material Icons Integration */
+.material-icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Responsive Gaps */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0 !important;
+    }
+}

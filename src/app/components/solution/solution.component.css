@@ -1,0 +1,157 @@
+.solution {
+    padding: 100px 24px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.solution-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.solution-visual {
+    position: relative;
+}
+
+.laptop-container {
+    position: relative;
+    z-index: 1;
+}
+
+.laptop-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+}
+
+.visual-badge {
+    position: absolute;
+    bottom: 10%;
+    right: -20px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: slideLeft 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visual-badge .material-icon {
+    font-size: 2.5rem;
+    color: #2856A3;
+}
+
+.visual-badge strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #1a2a4a;
+}
+
+.visual-badge small {
+    color: #666;
+}
+
+.solution-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 24px;
+    color: #1a2a4a;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.role-card {
+    background: #f8f9fc;
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.role-card:hover {
+    background: #fff;
+    border-color: #2856A3;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(40, 86, 163, 0.1);
+}
+
+.role-card .material-icon {
+    color: #2856A3;
+    font-size: 1.2rem;
+}
+
+.role-card span {
+    font-weight: 600;
+    color: #1a2a4a;
+    font-size: 0.95rem;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .solution-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .role-grid {
+        justify-content: center;
+    }
+
+    .role-card {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-content h2 {
+        font-size: 2.2rem;
+    }
+}

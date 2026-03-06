@@ -1,0 +1,97 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <a class="nav-logo" routerLink="/">
+      <img src="logo.png" alt="SchoolMate Logo">
+    </a>
+
+    <ul class="nav-links" [class.active]="isMobileMenuOpen">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a></li>
+      <li><a routerLink="/features" routerLinkActive="active" (click)="closeMobileMenu()">Features</a></li>
+      <li><a routerLink="/integrations" routerLinkActive="active" (click)="closeMobileMenu()">Integrations</a></li>
+      <li><a routerLink="/clients" routerLinkActive="active" (click)="closeMobileMenu()">Clients</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a></li>
+      <li><a href="https://demoschool.schoolmate.co.in/login" target="_blank" class="nav-dashboard-link">Dashboard</a></li>
+      <li class="nav-cta-mobile">
+        <a (click)="openAppModal()" class="btn-app-mobile">Download App</a>
+        <a (click)="openDemoModal()" class="btn-demo">Book a Demo</a>
+      </li>
+    </ul>
+
+    <div class="nav-actions-desktop">
+      <a (click)="openAppModal()" class="btn-app">
+        <span class="material-icon">smartphone</span>
+        App
+      </a>
+      <a (click)="openDemoModal()" class="btn-demo">Book a Demo</a>
+    </div>
+
+    <button class="hamburger" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- App Download Modal -->
+  <div class="app-modal-overlay" *ngIf="isAppModalOpen" (click)="closeAppModal()">
+    <div class="app-modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeAppModal()">
+        <span class="material-icon">close</span>
+      </button>
+      <div class="modal-body">
+        <h3>Download SchoolMate App</h3>
+        <p>Scan the QR code or click to download the app for your device.</p>
+        <div class="qr-container">
+          <img src="app-qr.png" alt="Download App QR Code">
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="app-badge-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book a Demo Modal -->
+  <div class="app-modal-overlay" *ngIf="isDemoModalOpen" (click)="closeDemoModal()">
+    <div class="app-modal-content demo-modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeDemoModal()">
+        <span class="material-icon">close</span>
+      </button>
+      <div class="modal-body">
+        <span class="modal-badge">Get All Mobile Apps For FREE</span>
+        <h3>Get A Free Demo</h3>
+        <p>Please fill the details below and get the 'demo' credentials for SchoolMate school management software.</p>
+        
+        <form class="demo-form">
+          <div class="form-group">
+            <label>Role*</label>
+            <select required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="admin">Administrator</option>
+              <option value="principal">Principal</option>
+              <option value="teacher">Teacher</option>
+              <option value="parent">Parent</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Name*</label>
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email*</label>
+            <input type="email" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <label>Mobile Number*</label>
+            <input type="tel" placeholder="10-digit mobile no." pattern="[0-9]{10}" required>
+          </div>
+          <button type="submit" class="btn-submit">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

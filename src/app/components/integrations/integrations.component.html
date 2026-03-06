@@ -1,0 +1,37 @@
+<section class="integrations" id="integrations">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Integrations</span>
+      <h2>Seamlessly <span class="highlight">Integrated</span> with Leading Platforms</h2>
+      <p>Connect your school ecosystem with powerful third-party integrations</p>
+    </div>
+
+    <div class="integrations-grid">
+      <div class="integration-card" *ngFor="let item of integrations">
+        <div class="integration-icon">
+          <span class="material-icon">{{ item.icon }}</span>
+        </div>
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+
+    <div class="integrations-visual">
+      <img src="mobile3.png" alt="SchoolMate Mobile App" loading="lazy">
+      <div class="visual-text">
+        <h3>Dedicated Mobile Apps</h3>
+        <p>Comprehensive ecosystem with dedicated mobile apps for <strong>Teachers, Parents, Drivers, Students, and Administrators</strong>. Bringing the entire school management experience to your fingertips.</p>
+        <div class="app-badges">
+          <a href="#" class="app-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.015c-.288 0-.575.072-.84.213L4.862 9.076c-.53.282-.862.826-.862 1.414v3.02c0 .588.332 1.132.862 1.414l11.821 6.848c.265.141.552.213.84.213.29 0 .578-.073.844-.216.53-.284.864-.828.864-1.418V3.649c0-.59-.334-1.134-.864-1.418a1.683 1.683 0 0 0-.844-.216z"/></svg>
+            Google Play
+          </a>
+          <a href="#" class="app-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83z"/></svg>
+            App Store
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

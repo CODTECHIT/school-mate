@@ -1,0 +1,43 @@
+<section class="hero" id="home">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Software for Smart Schools
+      </div>
+      <h1>India’s Leading Customized <span>School Management</span> Software</h1>
+      <p class="hero-subtitle">
+        Digitalize Your Organization (School / College / Institute / Coaching). All-In-One Solution for Smart Schools.
+      </p>
+      <div class="hero-actions">
+        <a (click)="openDemoModal()" class="btn-primary">
+          Get Started
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a (click)="openDemoModal()" class="btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-card" *ngFor="let stat of stats; let i = index">
+      <div class="stat-icon-wrap">
+        <span class="material-icon">{{ stat.icon }}</span>
+      </div>
+      <div class="stat-info">
+        <span class="stat-value">{{ animatedValues[i] | number }}{{ stat.suffix }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>

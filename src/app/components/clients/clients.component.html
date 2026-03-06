@@ -1,0 +1,52 @@
+<section class="clients" id="clients">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Our Clients</span>
+      <h2>Trusted by <span class="highlight">Schools Across India</span></h2>
+      <p>Join hundreds of educational institutions that have transformed their school management</p>
+    </div>
+
+    <!-- Logo Carousel -->
+    <div class="logo-carousel">
+      <div class="logo-track">
+        <div class="logo-item" *ngFor="let logo of duplicatedLogos">
+          <img [src]="logo.imageUrl" [alt]="logo.name" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.15"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+        </div>
+        <p class="testimonial-quote">{{ testimonials[activeTestimonial].quote }}</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <span class="material-icon">account_circle</span>
+          </div>
+          <div>
+            <strong>{{ testimonials[activeTestimonial].name }}</strong>
+            <span>{{ testimonials[activeTestimonial].role }}, {{ testimonials[activeTestimonial].school }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-nav">
+        <button class="nav-btn" (click)="prevTestimonial()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="testimonial-dots">
+          <span *ngFor="let t of testimonials; let i = index"
+                class="dot"
+                [class.active]="i === activeTestimonial"
+                (click)="activeTestimonial = i"></span>
+        </div>
+        <button class="nav-btn" (click)="nextTestimonial()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
