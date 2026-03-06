@@ -7,6 +7,7 @@ import { IntegrationsComponent } from '../../components/integrations/integration
 import { ClientsComponent } from '../../components/clients/clients.component';
 import { StatsComponent } from '../../components/stats/stats.component';
 import { CtaComponent } from '../../components/cta/cta.component';
+import { ShowcaseComponent } from '../../components/showcase/showcase.component';
 
 import { SolutionComponent } from '../../components/solution/solution.component';
 
@@ -20,9 +21,10 @@ import { SolutionComponent } from '../../components/solution/solution.component'
     SolutionComponent,
     AboutComponent,
     IntegrationsComponent,
+    ShowcaseComponent,
     ClientsComponent,
     StatsComponent,
-    CtaComponent
+    CtaComponent,
   ],
   template: `
     <app-hero></app-hero>
@@ -30,9 +32,10 @@ import { SolutionComponent } from '../../components/solution/solution.component'
     <app-solution></app-solution>
     <app-about></app-about>
     <app-integrations></app-integrations>
+    <app-showcase></app-showcase>
     <app-clients></app-clients>
     <app-stats></app-stats>
     <app-cta></app-cta>
-  `
+  `,
 })
-export class HomePageComponent { }
+export class HomePageComponent {}

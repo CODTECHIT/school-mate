@@ -1,17 +1,44 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="nav-container">
     <a class="nav-logo" routerLink="/">
-      <img src="logo.png" alt="SchoolMate Logo">
+      <img src="logo.png" alt="SchoolMate Logo" />
     </a>
 
     <ul class="nav-links" [class.active]="isMobileMenuOpen">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a></li>
-      <li><a routerLink="/features" routerLinkActive="active" (click)="closeMobileMenu()">Features</a></li>
-      <li><a routerLink="/integrations" routerLinkActive="active" (click)="closeMobileMenu()">Integrations</a></li>
-      <li><a routerLink="/clients" routerLinkActive="active" (click)="closeMobileMenu()">Clients</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a></li>
-      <li><a href="https://demoschool.schoolmate.co.in/login" target="_blank" class="nav-dashboard-link">Dashboard</a></li>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMobileMenu()"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+      </li>
+      <li>
+        <a routerLink="/features" routerLinkActive="active" (click)="closeMobileMenu()">Features</a>
+      </li>
+      <li>
+        <a routerLink="/integrations" routerLinkActive="active" (click)="closeMobileMenu()"
+          >Integrations</a
+        >
+      </li>
+      <li>
+        <a routerLink="/clients" routerLinkActive="active" (click)="closeMobileMenu()">Clients</a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
+      </li>
+      <li>
+        <a
+          href="https://demoschool.schoolmate.co.in/login"
+          target="_blank"
+          class="nav-dashboard-link"
+          >Dashboard</a
+        >
+      </li>
       <li class="nav-cta-mobile">
         <a (click)="openAppModal()" class="btn-app-mobile">Download App</a>
         <a (click)="openDemoModal()" class="btn-demo">Book a Demo</a>
@@ -43,11 +70,19 @@
         <h3>Download SchoolMate App</h3>
         <p>Scan the QR code or click to download the app for your device.</p>
         <div class="qr-container">
-          <img src="app-qr.png" alt="Download App QR Code">
+          <img src="app-qr.png" alt="Download App QR Code" />
         </div>
         <div class="modal-actions">
-          <a href="#" class="app-badge-btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.schoolmate.student"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="app-badge-btn"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+            />
           </a>
         </div>
       </div>
@@ -63,8 +98,11 @@
       <div class="modal-body">
         <span class="modal-badge">Get All Mobile Apps For FREE</span>
         <h3>Get A Free Demo</h3>
-        <p>Please fill the details below and get the 'demo' credentials for SchoolMate school management software.</p>
-        
+        <p>
+          Please fill the details below and get the 'demo' credentials for SchoolMate school
+          management software.
+        </p>
+
         <form class="demo-form">
           <div class="form-group">
             <label>Role*</label>
@@ -79,15 +117,15 @@
           </div>
           <div class="form-group">
             <label>Name*</label>
-            <input type="text" placeholder="Your name" required>
+            <input type="text" placeholder="Your name" required />
           </div>
           <div class="form-group">
             <label>Email*</label>
-            <input type="email" placeholder="Email address" required>
+            <input type="email" placeholder="Email address" required />
           </div>
           <div class="form-group">
             <label>Mobile Number*</label>
-            <input type="tel" placeholder="10-digit mobile no." pattern="[0-9]{10}" required>
+            <input type="tel" placeholder="10-digit mobile no." pattern="[0-9]{10}" required />
           </div>
           <button type="submit" class="btn-submit">SUBMIT</button>
         </form>

@@ -1,69 +1,184 @@
 /* Global Styles */
 :root {
-    --primary-blue: #2856A3;
-    --secondary-purple: #5B2D8E;
-    --accent-green: #2EAD6D;
-    --accent-gold: #F5B731;
-    --accent-red: #D42B5B;
-    --text-dark: #1a2a4a;
-    --text-gray: #666;
-    --bg-light: #f8f9fc;
-    --white: #ffffff;
+  --primary-blue: #2856a3;
+  --secondary-purple: #5b2d8e;
+  --accent-green: #2ead6d;
+  --accent-gold: #f5b731;
+  --accent-red: #d42b5b;
+  --text-dark: #1a2a4a;
+  --text-gray: #666;
+  --bg-light: #f8f9fc;
+  --white: #ffffff;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-color: var(--white);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+small,
+span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Scroll Snap */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Selection Color */
 ::selection {
-    background: var(--primary-blue);
-    color: var(--white);
+  background: var(--primary-blue);
+  color: var(--white);
 }
 
 /* Transitions */
 * {
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Material Icons Integration */
 .material-icon {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Responsive Gaps */
 @media (max-width: 768px) {
-    section {
-        padding: 60px 0 !important;
-    }
+  section {
+    padding: 60px 0 !important;
+  }
+
+  .page-header {
+    padding: 100px 16px 44px !important;
+  }
+
+  .page-header h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .page-header p {
+    font-size: 0.98rem !important;
+    line-height: 1.6;
+  }
+
+  .page-content {
+    padding: 56px 16px !important;
+  }
+
+  .container,
+  .section-container,
+  .stats-container,
+  .hero-container,
+  .footer-container,
+  .contact-container,
+  .about-container,
+  .solution-container,
+  .cta-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .content-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .content-grid .image-content {
+    order: 2;
+  }
+
+  .content-grid .text-content {
+    order: 1;
+  }
+
+  .content-grid h2,
+  .page-content h2,
+  .contact-info-card h3 {
+    font-size: 1.65rem !important;
+    line-height: 1.3;
+  }
+
+  .content-grid p,
+  .page-content p,
+  .section-header p {
+    font-size: 0.95rem !important;
+  }
+
+  .feature-list li,
+  .info-list li {
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 92px 14px 38px !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .page-content,
+  .contact-section {
+    padding: 44px 14px !important;
+  }
+
+  .container,
+  .section-container,
+  .stats-container,
+  .hero-container,
+  .footer-container,
+  .contact-container,
+  .about-container,
+  .solution-container,
+  .cta-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
 }

@@ -1,0 +1,47 @@
+<section class="showcase" id="showcase">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">App Showcase</span>
+      <h2>Explore Our <span class="highlight">Application Screens</span></h2>
+      <p>Real snapshots from SchoolMate mobile and web application experience.</p>
+    </div>
+
+    <div class="showcase-carousel" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
+      <button
+        class="nav-arrow left"
+        (click)="prevSlide(); restartAutoSlide()"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+
+      <article class="showcase-card">
+        <div class="image-wrap">
+          <img [src]="currentImage.src" [alt]="currentImage.title" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>{{ currentImage.title }}</h3>
+          <p>{{ currentImage.description }}</p>
+        </div>
+      </article>
+
+      <button
+        class="nav-arrow right"
+        (click)="nextSlide(); restartAutoSlide()"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+    </div>
+
+    <div class="dots">
+      <button
+        class="dot"
+        *ngFor="let item of showcaseImages; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></button>
+    </div>
+  </div>
+</section>
