@@ -38,7 +38,7 @@ export const routes: Routes = [
     // Company Links
     { path: 'join-us', component: JoinUs },
     { path: 'certificates', component: Certificates },
-    { path: 'news', component: News },
+    { path: 'news', component: InTheNews },
 
     // Quick Links / Solutions
     { path: 'solutions/academic-management', component: AcademicManagement },
@@ -51,7 +51,7 @@ export const routes: Routes = [
     { path: 'solutions/exam-management', component: ExamManagement },
 
     // Important Links
-    { path: 'free-apps', component: FreeApps },
+    { path: 'free-apps', component: OurFreeApps },
     { path: 'reports', component: Reports },
     { path: 'privacy-policy', component: PrivacyPolicy },
     { path: 'terms-of-use', component: TermsOfUse },
