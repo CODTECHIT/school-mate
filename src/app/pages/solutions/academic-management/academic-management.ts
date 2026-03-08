@@ -29,9 +29,12 @@ import { CtaComponent } from '../../../components/cta/cta.component';
             </ul>
           </div>
           <div class="image-content">
-            <div class="placeholder-img">
-              <span class="material-icon">school</span>
-            </div>
+            <img
+              src="/images/solutions/academic-management.svg"
+              alt="Academic Management overview"
+              class="solution-image"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -94,18 +97,16 @@ import { CtaComponent } from '../../../components/cta/cta.component';
       .feature-list .material-icon {
         color: #2856a3;
       }
-      .placeholder-img {
-        background: #f8f9fa;
-        height: 400px;
-        border-radius: 20px;
+      .image-content {
         display: flex;
-        align-items: center;
         justify-content: center;
-        border: 2px dashed #eee;
       }
-      .placeholder-img .material-icon {
-        font-size: 100px;
-        color: #ddd;
+      .solution-image {
+        width: 100%;
+        max-width: 520px;
+        border-radius: 20px;
+        border: 1px solid #e2eaf5;
+        box-shadow: 0 16px 36px rgba(17, 51, 102, 0.14);
       }
       @media (max-width: 768px) {
         .content-grid {

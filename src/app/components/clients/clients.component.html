@@ -10,7 +10,7 @@
     <div class="logo-carousel">
       <div class="logo-track">
         <div class="logo-item" *ngFor="let logo of duplicatedLogos">
-          <img [src]="logo.imageUrl" [alt]="logo.name" loading="lazy" />
+          <img [src]="logo.imageUrl" [alt]="logo.name" loading="lazy" draggable="false" />
         </div>
       </div>
     </div>

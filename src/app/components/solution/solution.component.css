@@ -32,16 +32,16 @@
 .floating-card {
   position: absolute;
   background: white;
-  padding: 12px 20px;
-  border-radius: 16px;
+  padding: 8px 14px;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   z-index: 2;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(40, 86, 163, 0.08);
-  min-width: 140px;
+  min-width: 110px;
 }
 
 .floating-card:hover {
@@ -51,27 +51,27 @@
 }
 
 .floating-card .material-icon {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #2856a3;
   background: rgba(40, 86, 163, 0.05);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .floating-card strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: #1a2a4a;
   line-height: 1.2;
 }
 
 .floating-card small {
   color: #666;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -102,7 +102,6 @@
 }
 
 @keyframes float-gentle {
-
   0%,
   100% {
     transform: translateY(0);
@@ -147,10 +146,12 @@
 }
 
 .role-card:hover {
-  background: linear-gradient(135deg,
-      #ffffff,
-      color-mix(in srgb, var(--accent-start) 11%, white),
-      color-mix(in srgb, var(--accent-end) 9%, white));
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    color-mix(in srgb, var(--accent-start) 11%, white),
+    color-mix(in srgb, var(--accent-end) 9%, white)
+  );
   border-color: color-mix(in srgb, var(--accent-start) 44%, transparent);
   transform: translateX(5px);
   box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-start) 25%, transparent);
@@ -196,7 +197,6 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -263,20 +263,20 @@
   }
 
   .floating-card {
-    padding: 8px 12px;
-    min-width: 110px;
-    gap: 8px;
-    border-radius: 12px;
+    padding: 6px 10px;
+    min-width: 90px;
+    gap: 6px;
+    border-radius: 10px;
   }
 
   .floating-card .material-icon {
-    font-size: 1.3rem;
-    width: 32px;
-    height: 32px;
+    font-size: 1.1rem;
+    width: 26px;
+    height: 26px;
   }
 
   .floating-card strong {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 
   .floating-card.manager {

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">Fee Management</title>
+  <desc id="d">Fee collection and payment records illustration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <text x="110" y="72" fill="#7c2d12" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">Fee Management</text>
+  <rect x="90" y="110" width="1020" height="700" rx="30" fill="#ffffff" stroke="#fed7aa"/>
+  <rect x="130" y="170" width="640" height="520" rx="24" fill="#fffaf4" stroke="#fde2c0"/>
+  <rect x="800" y="170" width="270" height="250" rx="22" fill="#ecfdf5" stroke="#bbf7d0"/>
+  <rect x="800" y="440" width="270" height="250" rx="22" fill="#eef2ff" stroke="#c7d2fe"/>
+  <rect x="170" y="230" width="560" height="38" rx="19" fill="#f59e0b" opacity="0.22"/>
+  <rect x="170" y="300" width="500" height="20" rx="10" fill="#7c2d12" opacity="0.12"/>
+  <rect x="170" y="340" width="500" height="20" rx="10" fill="#7c2d12" opacity="0.12"/>
+  <rect x="170" y="380" width="500" height="20" rx="10" fill="#7c2d12" opacity="0.12"/>
+  <rect x="170" y="420" width="500" height="20" rx="10" fill="#7c2d12" opacity="0.12"/>
+  <rect x="170" y="460" width="500" height="20" rx="10" fill="#7c2d12" opacity="0.12"/>
+  <rect x="170" y="520" width="220" height="94" rx="20" fill="#f59e0b" opacity="0.25"/>
+  <rect x="420" y="520" width="220" height="94" rx="20" fill="#f97316" opacity="0.25"/>
+</svg>

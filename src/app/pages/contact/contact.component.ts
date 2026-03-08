@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CtaComponent } from '../../components/cta/cta.component';
 
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [CommonModule, CtaComponent],
+  imports: [CommonModule, ReactiveFormsModule, CtaComponent],
   template: `
     <div class="page-header">
       <h1>We're Always Ready</h1>
@@ -75,40 +76,113 @@ import { CtaComponent } from '../../components/cta/cta.component';
           </div>
 
           <div class="contact-form-card">
-            <form>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label>Full Name *</label>
-                <input type="text" placeholder="Enter your name" />
+                <input type="text" formControlName="fullName" placeholder="Enter your name" />
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('fullName')?.touched &&
+                    contactForm.get('fullName')?.errors?.['required']
+                  "
+                  >Full Name is required</span
+                >
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('fullName')?.touched &&
+                    contactForm.get('fullName')?.errors?.['minlength']
+                  "
+                  >Name must be at least 2 characters</span
+                >
               </div>
               <div class="form-group">
                 <label>Email *</label>
-                <input type="email" placeholder="Enter your email" />
+                <input type="email" formControlName="email" placeholder="Enter your email" />
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('email')?.touched &&
+                    contactForm.get('email')?.errors?.['required']
+                  "
+                  >Email is required</span
+                >
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']
+                  "
+                  >Please enter a valid email</span
+                >
               </div>
               <div class="form-group">
                 <label>Mobile Number *</label>
-                <input type="tel" placeholder="Enter your phone number" />
+                <input type="tel" formControlName="mobile" placeholder="Enter your phone number" />
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('mobile')?.touched &&
+                    contactForm.get('mobile')?.errors?.['required']
+                  "
+                  >Mobile number is required</span
+                >
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('mobile')?.touched &&
+                    contactForm.get('mobile')?.errors?.['pattern']
+                  "
+                  >Please enter a valid 10-digit mobile number</span
+                >
               </div>
               <div class="form-group">
                 <label>School Name *</label>
-                <input type="text" placeholder="Enter school name" />
+                <input type="text" formControlName="schoolName" placeholder="Enter school name" />
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('schoolName')?.touched &&
+                    contactForm.get('schoolName')?.errors?.['required']
+                  "
+                  >School Name is required</span
+                >
               </div>
               <div class="form-group">
                 <label>City</label>
-                <input type="text" placeholder="Enter city" />
+                <input type="text" formControlName="city" placeholder="Enter city" />
               </div>
               <div class="form-group">
                 <label>Website</label>
-                <input type="text" placeholder="Enter website (optional)" />
+                <input
+                  type="text"
+                  formControlName="website"
+                  placeholder="Enter website (optional)"
+                />
               </div>
               <div class="form-group">
                 <label>Address *</label>
-                <input type="text" placeholder="Enter address" />
+                <input type="text" formControlName="address" placeholder="Enter address" />
+                <span
+                  class="error-message"
+                  *ngIf="
+                    contactForm.get('address')?.touched &&
+                    contactForm.get('address')?.errors?.['required']
+                  "
+                  >Address is required</span
+                >
               </div>
               <div class="form-group">
                 <label>Your Message</label>
-                <textarea rows="4" placeholder="Type your message"></textarea>
+                <textarea
+                  formControlName="message"
+                  rows="4"
+                  placeholder="Type your message"
+                ></textarea>
               </div>
-              <button type="submit" class="btn-submit">SUBMIT</button>
+              <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+                SUBMIT
+              </button>
             </form>
           </div>
         </div>
@@ -307,7 +381,17 @@ import { CtaComponent } from '../../components/cta/cta.component';
         border-color: color-mix(in srgb, var(--accent-start) 46%, transparent);
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-start) 18%, transparent);
       }
-      .btn-submit {
+      .form-group input.error,
+      .form-group textarea.error {
+        border-color: #ef4444;
+      }
+      .error-message {
+        display: block;
+        color: #ef4444;
+        font-size: 0.75rem;
+        margin-top: 4px;
+      }
+      .btn-submit:disabled {
         width: 100%;
         padding: 14px;
         background: linear-gradient(135deg, #2856a3, #5b2d8e);
@@ -323,6 +407,11 @@ import { CtaComponent } from '../../components/cta/cta.component';
       .btn-submit:hover {
         filter: brightness(1.05);
         transform: translateY(-2px);
+      }
+      .btn-submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
       }
 
       @media (max-width: 768px) {
@@ -355,7 +444,30 @@ import { CtaComponent } from '../../components/cta/cta.component';
   ],
 })
 export class ContactPageComponent implements OnInit {
+  contactForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      fullName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      schoolName: ['', [Validators.required]],
+      city: [''],
+      website: [''],
+      address: ['', [Validators.required]],
+      message: [''],
+    });
+  }
+
   ngOnInit() {
     window.scrollTo(0, 0);
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form submitted:', this.contactForm.value);
+      alert('Thank you for contacting us! We will get back to you soon.');
+      this.contactForm.reset();
+    }
   }
 }

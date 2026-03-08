@@ -1,7 +1,7 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="nav-container">
     <a class="nav-logo" routerLink="/">
-      <img src="logo.png" alt="schoolmate Logo" />
+      <img src="logo.png" alt="schoolmate Logo" draggable="false" />
     </a>
 
     <ul class="nav-links" [class.active]="isMobileMenuOpen">
@@ -32,20 +32,37 @@
         <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
       </li>
       <li>
+        <a routerLink="/pricing" routerLinkActive="active" (click)="closeMobileMenu()">Pricing</a>
+      </li>
+      <li class="nav-cta-mobile">
+        <a
+          routerLink="/pricing"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          class="btn-pricing-mobile"
+          >Pricing</a
+        >
         <a
           href="https://demoschool.schoolmate.co.in/login"
           target="_blank"
-          class="nav-dashboard-link"
+          rel="noopener noreferrer"
+          class="btn-dashboard-mobile"
+          (click)="closeMobileMenu()"
           >Dashboard</a
         >
-      </li>
-      <li class="nav-cta-mobile">
         <a (click)="openAppModal()" class="btn-app-mobile">Download App</a>
         <a (click)="openDemoModal()" class="btn-demo">Book a Demo</a>
       </li>
     </ul>
 
     <div class="nav-actions-desktop">
+      <a
+        href="https://demoschool.schoolmate.co.in/login"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-dashboard-header"
+        >Dashboard</a
+      >
       <a (click)="openAppModal()" class="btn-app">
         <span class="material-icon">smartphone</span>
         App
@@ -74,7 +91,7 @@
             <h4>Schoolmate Student App</h4>
             <p>for students & parents</p>
             <div class="qr-box">
-              <img src="images/app1.png" alt="Student App QR Code" />
+              <img src="images/app1.png" alt="Student App QR Code" draggable="false" />
               <span>Scan QR Code</span>
             </div>
             <a
@@ -92,7 +109,12 @@
 
           <!-- Middle Phone -->
           <div class="app-phone-column">
-            <img src="images/mobile3.png" alt="Schoolmate Mobile App" class="center-phone" />
+            <img
+              src="images/mobile3.png"
+              alt="Schoolmate Mobile App"
+              class="center-phone"
+              draggable="false"
+            />
           </div>
 
           <!-- Employee App -->
@@ -101,7 +123,7 @@
             <h4>Schoolmate Employee App</h4>
             <p>for teachers, admin, principal & employees</p>
             <div class="qr-box">
-              <img src="images/app2.png" alt="Employee App QR Code" />
+              <img src="images/app2.png" alt="Employee App QR Code" draggable="false" />
               <span>Scan QR Code</span>
             </div>
             <a
@@ -132,8 +154,11 @@
         <h3>Get A Free Demo</h3>
         <p>
           Please fill the details below and get the 'demo' credentials for schoolmate school
-          management software. <span class="highlight-sms">5000 FREE SMS</span>
+          management software.
         </p>
+        <div class="sms-highlight-wrap">
+          <span class="highlight-sms">5000 FREE SMS</span>
+        </div>
 
         <form class="demo-form">
           <div class="form-group">

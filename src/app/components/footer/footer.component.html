@@ -5,7 +5,7 @@
         <!-- Brand Info -->
         <div class="footer-col brand-col">
           <a class="footer-logo" routerLink="/" (click)="scrollToTop()">
-            <img src="logo.png" alt="schoolmate Logo" />
+            <img src="logo.png" alt="schoolmate Logo" draggable="false" />
           </a>
           <p class="footer-desc">
             schoolmate is a school management software with mobile apps for teachers, employees,
@@ -21,7 +21,7 @@
               href="https://www.facebook.com/people/schoolmate-ERP-Software/61563897116374/?sk=about"
               target="_blank"
               rel="noopener noreferrer"
-              class="social-icon"
+              class="social-icon facebook"
               aria-label="Facebook"
               ><i class="fab fa-facebook-f"></i
             ></a>
@@ -29,7 +29,7 @@
               href="https://www.instagram.com/schoolmate_erp/"
               target="_blank"
               rel="noopener noreferrer"
-              class="social-icon"
+              class="social-icon instagram"
               aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
@@ -37,7 +37,7 @@
               href="https://www.linkedin.com/in/schoolmate-erp-software-68b651320/"
               target="_blank"
               rel="noopener noreferrer"
-              class="social-icon"
+              class="social-icon linkedin"
               aria-label="LinkedIn"
               ><i class="fab fa-linkedin-in"></i
             ></a>
@@ -45,7 +45,7 @@
               href="https://www.youtube.com/@schoolmate-erp"
               target="_blank"
               rel="noopener noreferrer"
-              class="social-icon"
+              class="social-icon youtube"
               aria-label="YouTube"
               ><i class="fab fa-youtube"></i
             ></a>
@@ -56,12 +56,12 @@
         <div class="footer-col">
           <h3>COMPANY</h3>
           <ul>
-            <li><a routerLink="/about">About Us</a></li>
-            <li><a routerLink="/join-us">Join Us</a></li>
-            <li><a routerLink="/certificates">Certificates</a></li>
-            <li><a routerLink="/news">In The News</a></li>
-            <li><a routerLink="/clients">Our Clients</a></li>
-            <li><a routerLink="/contact">Contact Us</a></li>
+            <li><a routerLink="/about" (click)="scrollToTop()">About Us</a></li>
+            <li><a routerLink="/join-us" (click)="scrollToTop()">Join Us</a></li>
+            <li><a routerLink="/certificates" (click)="scrollToTop()">Certificates</a></li>
+            <li><a routerLink="/news" (click)="scrollToTop()">In The News</a></li>
+            <li><a routerLink="/clients" (click)="scrollToTop()">Our Clients</a></li>
+            <li><a routerLink="/contact" (click)="scrollToTop()">Contact Us</a></li>
           </ul>
         </div>
 
@@ -69,14 +69,42 @@
         <div class="footer-col">
           <h3>QUICK LINKS</h3>
           <ul>
-            <li><a routerLink="/solutions/academic-management">Academic Management</a></li>
-            <li><a routerLink="/solutions/student-management">Student Management</a></li>
-            <li><a routerLink="/solutions/teacher-management">Teacher Management</a></li>
-            <li><a routerLink="/solutions/fee-management">Fee Management</a></li>
-            <li><a routerLink="/solutions/transport-management">Transport Management</a></li>
-            <li><a routerLink="/solutions/attendance-management">Attendance Management</a></li>
-            <li><a routerLink="/solutions/finance-management">Finance Management</a></li>
-            <li><a routerLink="/solutions/exam-management">Exam Management</a></li>
+            <li>
+              <a routerLink="/solutions/academic-management" (click)="scrollToTop()"
+                >Academic Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/student-management" (click)="scrollToTop()"
+                >Student Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/teacher-management" (click)="scrollToTop()"
+                >Teacher Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/fee-management" (click)="scrollToTop()">Fee Management</a>
+            </li>
+            <li>
+              <a routerLink="/solutions/transport-management" (click)="scrollToTop()"
+                >Transport Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/attendance-management" (click)="scrollToTop()"
+                >Attendance Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/finance-management" (click)="scrollToTop()"
+                >Finance Management</a
+              >
+            </li>
+            <li>
+              <a routerLink="/solutions/exam-management" (click)="scrollToTop()">Exam Management</a>
+            </li>
           </ul>
         </div>
 
@@ -84,11 +112,11 @@
         <div class="footer-col">
           <h3>IMPORTANT LINKS</h3>
           <ul>
-            <li><a routerLink="/features">All Features</a></li>
-            <li><a routerLink="/free-apps">Our Free Apps</a></li>
-            <li><a routerLink="/reports">Reports</a></li>
-            <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
-            <li><a routerLink="/terms-of-use">Terms of Use</a></li>
+            <li><a routerLink="/features" (click)="scrollToTop()">All Features</a></li>
+            <li><a routerLink="/free-apps" (click)="scrollToTop()">Our Free Apps</a></li>
+            <li><a routerLink="/reports" (click)="scrollToTop()">Reports</a></li>
+            <li><a routerLink="/privacy" (click)="scrollToTop()">Privacy Policy</a></li>
+            <li><a routerLink="/terms-of-use" (click)="scrollToTop()">Terms of Use</a></li>
           </ul>
         </div>
 

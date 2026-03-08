@@ -14,9 +14,12 @@ import { CtaComponent } from '../../../components/cta/cta.component';
       <div class="container">
         <div class="content-grid">
           <div class="image-content">
-            <div class="placeholder-img">
-              <span class="material-icon">groups</span>
-            </div>
+            <img
+              src="/images/solutions/student-management.svg"
+              alt="Student Management overview"
+              class="solution-image"
+              loading="lazy"
+            />
           </div>
           <div class="text-content">
             <h2>Complete <span class="highlight">Student Lifecycle</span> Tracking</h2>
@@ -92,18 +95,16 @@ import { CtaComponent } from '../../../components/cta/cta.component';
       .feature-list .material-icon {
         color: #2856a3;
       }
-      .placeholder-img {
-        background: #f8f9fa;
-        height: 400px;
-        border-radius: 20px;
+      .image-content {
         display: flex;
-        align-items: center;
         justify-content: center;
-        border: 2px dashed #eee;
       }
-      .placeholder-img .material-icon {
-        font-size: 100px;
-        color: #ddd;
+      .solution-image {
+        width: 100%;
+        max-width: 520px;
+        border-radius: 20px;
+        border: 1px solid #e2eaf5;
+        box-shadow: 0 16px 36px rgba(17, 51, 102, 0.14);
       }
       @media (max-width: 768px) {
         .content-grid {

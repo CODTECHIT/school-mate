@@ -12,6 +12,31 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
   imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, ScrollToTopComponent],
   template: `
     <app-navbar></app-navbar>
+
+    <!-- Floating Quick Contact Buttons -->
+    <div class="floating-quick-actions">
+      <a
+        href="https://wa.me/918074041675?text=Hello%20I%20am%20interested%20in%20schoolmate%20software%20please%20share%20more%20details"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn whatsapp"
+        title="Chat on WhatsApp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="features_presentation.pdf"
+        download="schoolmate-brochure.pdf"
+        class="floating-btn brochure"
+        title="Download Brochure"
+      >
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a href="tel:+918074041675" class="floating-btn call" title="Call Us">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+
     <router-outlet></router-outlet>
     <app-scroll-to-top></app-scroll-to-top>
     <app-footer></app-footer>
@@ -21,7 +46,7 @@ export class App {
   private observer: IntersectionObserver | null = null;
   private routeSubscription: Subscription | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngAfterViewInit(): void {
     if (typeof window === 'undefined') {
@@ -34,6 +59,11 @@ export class App {
     this.routeSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
+        // Force top scroll on every route change (important for footer link navigation).
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
         setTimeout(() => this.initScrollAnimations(), 60);
       });
   }
