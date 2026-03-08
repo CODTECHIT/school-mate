@@ -1,0 +1,70 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled,
+.navbar.is-pricing-page {
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 5px 0;
+}
+
+.navbar.scrolled .nav-links li a,
+.navbar.is-pricing-page .nav-links li a {
+  color: #374151;
+  font-weight: 500;
+}
+
+.navbar.scrolled .nav-links li a:hover,
+.navbar.scrolled .nav-links li a.active,
+.navbar.is-pricing-page .nav-links li a:hover,
+.navbar.is-pricing-page .nav-links li a.active {
+  color: #2856a3;
+  background: rgba(40, 86, 163, 0.08);
+}
+
+.navbar.scrolled .hamburger span,
+.navbar.is-pricing-page .hamburger span {
+  background: #1f2a44;
+}
+
+.navbar.scrolled .nav-logo img,
+.navbar.is-pricing-page .nav-logo img {
+  filter: none;
+}
+
+/* Scrolled/Pricing state Dashboard Button */
+.navbar.scrolled .btn-dashboard-header,
+.navbar.is-pricing-page .btn-dashboard-header {
+  color: #5b2d8e;
+  background: rgba(91, 45, 142, 0.05);
+  border: 1px solid rgba(91, 45, 142, 0.2);
+}
+
+.navbar.scrolled .btn-dashboard-header:hover,
+.navbar.is-pricing-page .btn-dashboard-header:hover {
+  background: #5b2d8e;
+  color: #fff;
+}
+
+/* Scrolled/Pricing state App Button */
+.navbar.scrolled .btn-app,
+.navbar.is-pricing-page .btn-app {
+  background: rgba(40, 86, 163, 0.05);
+  color: #2856a3;
+  border: 1px solid rgba(40, 86, 163, 0.2);
+}
+
+.navbar.scrolled .btn-app:hover,
+.navbar.is-pricing-page .btn-app:hover {
+  background: #2856a3;
+  color: #ffffff;
+  border-color: #2856a3;
+}

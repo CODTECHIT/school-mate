@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { FeaturesComponent } from '../../components/features/features.component';
 import { AboutComponent } from '../../components/about/about.component';
@@ -38,4 +39,27 @@ import { SolutionComponent } from '../../components/solution/solution.component'
     <app-cta></app-cta>
   `,
 })
-export class HomePageComponent {}
+export class HomePageComponent implements OnInit {
+  constructor(
+    private meta: Meta,
+    private title: Title
+  ) { }
+
+  ngOnInit() {
+    // Set page title
+    this.title.setTitle('Schoolmate - Best School Management Software | ERP for Schools, Colleges & Institutes');
+
+    // Set meta tags
+    this.meta.updateTag({ name: 'description', content: 'Schoolmate is India\'s leading school management software & ERP for schools, colleges, institutes & coaching centers. Manage academics, attendance, fees, transport & more. 5000+ schools trust Schoolmate.' });
+    this.meta.updateTag({ name: 'keywords', content: 'school management software, school ERP, school management system, college management software, institute management software, coaching center software, academic management software, student information system, fee management software, attendance management system, school mobile app, education ERP India' });
+
+    // Open Graph
+    this.meta.updateTag({ property: 'og:title', content: 'Schoolmate - Best School Management Software | ERP for Smart Schools' });
+    this.meta.updateTag({ property: 'og:description', content: 'India\'s leading school management software & ERP for schools, colleges & institutes. Manage academics, attendance, fees, transport & more. Get 5000+ FREE SMS.' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://www.schoolmate.co.in/images/home_banner.png' });
+
+    // Twitter
+    this.meta.updateTag({ name: 'twitter:title', content: 'Schoolmate - Best School Management Software | ERP for Smart Schools' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'India\'s leading school management software & ERP for schools, colleges & institutes.' });
+  }
+}

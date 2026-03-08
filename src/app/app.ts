@@ -46,7 +46,7 @@ export class App {
   private observer: IntersectionObserver | null = null;
   private routeSubscription: Subscription | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngAfterViewInit(): void {
     if (typeof window === 'undefined') {
@@ -102,6 +102,7 @@ export class App {
     }
 
     const selector = [
+      // Cards
       '.feature-card',
       '.integration-card',
       '.showcase-card',
@@ -111,6 +112,24 @@ export class App {
       '.stat-card',
       '.contact-info-card',
       '.contact-form-card',
+      '.preview-card',
+      '.solution-card',
+      // Section elements
+      '.section-header',
+      '.section-title',
+      '.section-subtitle',
+      '.about-image',
+      '.about-content',
+      '.feature-list',
+      '.client-logo',
+      // CTA elements
+      '.cta-content',
+      '.cta-button',
+      // Stats
+      '.stats-grid',
+      // Footer columns
+      '.footer-column',
+      '.footer-links',
     ].join(', ');
 
     const elements = document.querySelectorAll<HTMLElement>(selector);

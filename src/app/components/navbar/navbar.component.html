@@ -1,7 +1,7 @@
-<nav class="navbar" [class.scrolled]="isScrolled">
+<nav class="navbar" [class.scrolled]="isScrolled" [class.is-pricing-page]="isPricingPage">
   <div class="nav-container">
     <a class="nav-logo" routerLink="/">
-      <img src="logo.png" alt="schoolmate Logo" draggable="false" />
+      <img src="logo.png" alt="schoolmate Logo" draggable="false" width="180" height="48" />
     </a>
 
     <ul class="nav-links" [class.active]="isMobileMenuOpen">

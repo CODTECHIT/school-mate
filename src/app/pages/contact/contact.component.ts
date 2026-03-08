@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { CtaComponent } from '../../components/cta/cta.component';
 
 @Component({
@@ -446,7 +447,11 @@ import { CtaComponent } from '../../components/cta/cta.component';
 export class ContactPageComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private meta: Meta,
+    private title: Title
+  ) {
     this.contactForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
@@ -461,6 +466,12 @@ export class ContactPageComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+
+    this.title.setTitle('Contact Schoolmate | Get Free Demo - School Management Software');
+    this.meta.updateTag({ name: 'description', content: 'Contact Schoolmate for free demo of school management software. Get 5000 FREE SMS credits. Call +91 8074041675 or fill the contact form. 5000+ schools trust Schoolmate.' });
+    this.meta.updateTag({ name: 'keywords', content: 'contact schoolmate, school software demo, get school ERP demo, contact school management software, school software enquiry' });
+    this.meta.updateTag({ property: 'og:title', content: 'Contact Schoolmate | Get Free Demo' });
+    this.meta.updateTag({ property: 'og:description', content: 'Contact us for free demo of school management software.' });
   }
 
   onSubmit() {

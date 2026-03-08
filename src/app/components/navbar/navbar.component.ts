@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 import { ModalService } from '../../services/modal.service';
 
@@ -16,6 +17,7 @@ export class NavbarComponent {
     isMobileMenuOpen = false;
     isAppModalOpen = false;
     isDemoModalOpen = false;
+    isPricingPage = false;
 
     constructor(
         private router: Router,
@@ -23,11 +25,29 @@ export class NavbarComponent {
     ) {
         this.modalService.appModal$.subscribe(open => this.isAppModalOpen = open);
         this.modalService.demoModal$.subscribe(open => this.isDemoModalOpen = open);
+
+        // Track route changes
+        this.router.events.pipe(
+            filter(event => event instanceof NavigationEnd)
+        ).subscribe(() => {
+            this.isPricingPage = this.router.url.includes('/pricing');
+            this.onScroll();
+        });
     }
 
-    @HostListener('window:scroll')
+    ngOnInit() {
+        this.isPricingPage = this.router.url.includes('/pricing');
+        this.onScroll();
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', () => this.onScroll(), true);
+        }
+    }
+
     onScroll() {
-        this.isScrolled = window.scrollY > 50;
+        if (typeof window !== 'undefined') {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            this.isScrolled = scrollTop > 50;
+        }
     }
 
     toggleMobileMenu() {
