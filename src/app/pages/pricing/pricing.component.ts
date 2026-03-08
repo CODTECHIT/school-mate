@@ -16,12 +16,14 @@ interface Plan {
   imports: [CommonModule, CtaComponent],
   template: `
     <section class="page-header">
-      <div class="container">
-        <p class="eyebrow">Pricing Plans</p>
-        <h1>Choose The Right Schoolmate Plan</h1>
+      <div class="header-shape shape-left"></div>
+      <div class="header-shape shape-right"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Schoolmate Pricing</p>
+        <h1>Premium Plans For Every Stage Of Your School Growth</h1>
         <p class="subtext">
-          Built from your current project modules. Silver covers essentials, Gold adds operational
-          depth, and Premium unlocks advanced automation and analytics.
+          Start with the essentials, scale into automation, and unlock enterprise-grade control.
+          Each plan is mapped from modules already available in your platform.
         </p>
       </div>
     </section>
@@ -29,28 +31,32 @@ interface Plan {
     <section class="pricing-section">
       <div class="container plans-grid">
         <article class="plan-card" *ngFor="let plan of plans" [ngClass]="plan.accentClass">
+          <p class="plan-tag" *ngIf="plan.name === 'Gold'">Most Popular</p>
           <header class="plan-head">
             <h2>{{ plan.name }}</h2>
             <p>{{ plan.subtitle }}</p>
           </header>
+
           <p class="plan-audience">Best For: {{ plan.audience }}</p>
 
           <ul class="module-list">
             <li *ngFor="let module of plan.modules">
-              <span class="material-icon">check_circle</span>
+              <span class="material-icon">task_alt</span>
               <span>{{ module }}</span>
             </li>
           </ul>
+
+          <a routerLink="/contact" class="plan-cta">Book A Demo</a>
         </article>
       </div>
     </section>
 
     <section class="notes-section">
       <div class="container notes-card">
-        <h3>Plan Logic Used For This Page</h3>
+        <h3>How Plans Are Structured</h3>
         <p>
-          Modules are mapped by complexity from your existing feature set: core school operations in
-          Silver, financial and transport expansion in Gold, and enterprise workflows in Premium.
+          Silver includes core operations, Gold adds deeper administration and tracking, and Premium
+          focuses on automation, security, and enterprise workflows for larger institutions.
         </p>
       </div>
     </section>
@@ -60,10 +66,38 @@ interface Plan {
   styles: [
     `
       .page-header {
-        background: linear-gradient(135deg, #1d4f9c, #0f2b59);
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 10% 15%, #3e6ab5 0%, transparent 32%),
+          radial-gradient(circle at 85% 10%, #214885 0%, transparent 30%),
+          linear-gradient(135deg, #0f2a57, #173c74 55%, #102f60);
         color: #fff;
         text-align: center;
-        padding: 120px 24px 68px;
+        padding: 128px 24px 94px;
+      }
+
+      .header-shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(2px);
+        pointer-events: none;
+      }
+
+      .shape-left {
+        width: 280px;
+        height: 280px;
+        background: rgba(250, 204, 21, 0.14);
+        left: -70px;
+        top: 36px;
+      }
+
+      .shape-right {
+        width: 340px;
+        height: 340px;
+        background: rgba(147, 197, 253, 0.12);
+        right: -100px;
+        top: -70px;
       }
 
       .container {
@@ -71,75 +105,108 @@ interface Plan {
         margin: 0 auto;
       }
 
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+
       .eyebrow {
-        margin: 0 0 10px;
-        font-size: 0.86rem;
+        margin: 0 0 14px;
+        font-size: 0.8rem;
         font-weight: 700;
-        letter-spacing: 1.4px;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
-        color: #f5b731;
+        color: #facc15;
       }
 
       .page-header h1 {
         margin: 0;
-        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-size: clamp(2rem, 4.8vw, 3.45rem);
         font-weight: 800;
+        letter-spacing: -0.8px;
       }
 
       .subtext {
-        margin: 18px auto 0;
-        max-width: 840px;
-        font-size: 1.02rem;
-        line-height: 1.75;
+        margin: 20px auto 0;
+        max-width: 900px;
+        font-size: 1.05rem;
+        line-height: 1.8;
         color: rgba(255, 255, 255, 0.92);
       }
 
       .pricing-section {
-        padding: 0px 24px 30px;
-        background: #f6f9ff;
+        padding: 0 24px 38px;
+        background: linear-gradient(180deg, #eef4ff 0, #f7f9fd 190px, #f7f9fd 100%);
       }
 
       .plans-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        gap: 24px;
+        margin-top: -62px;
       }
 
       .plan-card {
-        border-radius: 20px;
-        background: #fff;
-        border: 1px solid #e5ebf6;
-        box-shadow: 0 10px 24px rgba(10, 30, 64, 0.06);
+        position: relative;
+        border-radius: 24px;
+        background: #ffffff;
+        border: 1px solid #dae5f6;
+        box-shadow: 0 18px 42px rgba(17, 37, 74, 0.1);
         overflow: hidden;
+        padding-bottom: 18px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 24px 48px rgba(17, 37, 74, 0.14);
+      }
+
+      .plan-tag {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        margin: 0;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #f59e0b, #f97316);
+        color: #fff;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.3px;
       }
 
       .plan-head {
-        padding: 22px 22px 16px;
+        padding: 28px 22px 16px;
         border-bottom: 1px solid #eef2fa;
       }
 
       .plan-head h2 {
         margin: 0;
-        font-size: 1.6rem;
+        font-size: 1.72rem;
+        font-weight: 800;
+        letter-spacing: -0.3px;
       }
 
       .plan-head p {
-        margin: 8px 0 0;
+        margin: 10px 0 0;
         color: #49566c;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
       }
 
       .plan-audience {
-        margin: 14px 22px 8px;
-        font-size: 0.9rem;
+        margin: 16px 22px 10px;
+        font-size: 0.88rem;
         color: #334155;
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .module-list {
         list-style: none;
         margin: 0;
-        padding: 8px 22px 22px;
+        padding: 8px 22px 20px;
         display: grid;
         gap: 11px;
       }
@@ -150,76 +217,123 @@ interface Plan {
         gap: 9px;
         color: #1f2937;
         line-height: 1.45;
+        font-size: 0.93rem;
       }
 
       .module-list .material-icon {
         font-size: 19px;
         margin-top: 2px;
-        color: #16a34a;
+        color: #0f8b51;
+      }
+
+      .plan-cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 44px);
+        margin: 6px auto 0;
+        padding: 11px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: all 0.25s ease;
       }
 
       .silver .plan-head {
-        background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        background: linear-gradient(135deg, #f8fafc, #eef2f7);
+      }
+
+      .silver .plan-cta {
+        background: #e2e8f0;
+        color: #334155;
       }
 
       .gold {
-        border-color: #f8d58a;
-        box-shadow: 0 14px 28px rgba(245, 183, 49, 0.18);
+        border-color: #f6d08a;
+        box-shadow: 0 22px 45px rgba(245, 158, 11, 0.2);
+        transform: translateY(-12px);
       }
 
       .gold .plan-head {
-        background: linear-gradient(135deg, #fff4cc, #f7dd8f);
+        background: linear-gradient(135deg, #fff7dc, #f7de9e);
+      }
+
+      .gold .plan-cta {
+        background: linear-gradient(135deg, #f59e0b, #f97316);
+        color: #fff;
       }
 
       .premium .plan-head {
-        background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+        background: linear-gradient(135deg, #e4efff, #cfe2ff);
+      }
+
+      .premium .plan-cta {
+        background: #1d4f9c;
+        color: #fff;
+      }
+
+      .plan-cta:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
       }
 
       .notes-section {
-        background: #f6f9ff;
-        padding: 0 24px 60px;
+        background: #f7f9fd;
+        padding: 0 24px 72px;
       }
 
       .notes-card {
-        background: #fff;
-        border: 1px solid #e6edf7;
-        border-radius: 16px;
-        padding: 20px;
+        background: linear-gradient(135deg, #ffffff, #f3f7fe);
+        border: 1px solid #dde8f7;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 10px 22px rgba(17, 37, 74, 0.06);
       }
 
       .notes-card h3 {
-        margin: 0 0 10px;
-        font-size: 1.2rem;
+        margin: 0 0 12px;
+        font-size: 1.25rem;
         color: #13294d;
       }
 
       .notes-card p {
         margin: 0;
         color: #425068;
-        line-height: 1.7;
+        line-height: 1.75;
       }
 
       @media (max-width: 1024px) {
         .plans-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+          margin-top: -46px;
+        }
+
+        .gold {
+          transform: translateY(0);
         }
       }
 
       @media (max-width: 700px) {
         .plans-grid {
           grid-template-columns: 1fr;
+          margin-top: -34px;
         }
 
         .page-header {
-          padding: 104px 18px 56px;
+          padding: 106px 18px 68px;
         }
 
         .pricing-section {
-          padding: 0px 16px 24px;
+          padding: 0 16px 24px;
         }
 
         .notes-section {
           padding: 0 16px 44px;
+        }
+
+        .plan-card {
+          border-radius: 20px;
         }
       }
     `,
