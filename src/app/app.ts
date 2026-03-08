@@ -72,7 +72,6 @@ export class App {
     }
 
     const selector = [
-      'section',
       '.feature-card',
       '.integration-card',
       '.showcase-card',
