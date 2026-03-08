@@ -14,7 +14,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
       <div class="container">
         <h2>Build Smarter <span class="highlight">Education Systems</span></h2>
         <p>
-          SchoolMate is a complete digital school ecosystem with dedicated mobile apps for teachers,
+          schoolmate is a complete digital school ecosystem with dedicated mobile apps for teachers,
           parents, drivers, students, and administrators.
         </p>
         <p>

@@ -16,7 +16,7 @@ import { CtaComponent } from '../../../components/cta/cta.component';
           <div class="text-content">
             <h2>Empower Your <span class="highlight">Educators</span></h2>
             <p>
-              Teacher Management in SchoolMate focuses on complete attendance workflows for
+              Teacher Management in schoolmate focuses on complete attendance workflows for
               teachers, staff, and employees with real-time visibility and reduced manual errors.
             </p>
             <ul class="feature-list">

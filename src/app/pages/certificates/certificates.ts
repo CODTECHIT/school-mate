@@ -14,7 +14,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
       <div class="container">
         <h2>Platform Trust & <span class="highlight">Compliance</span></h2>
         <p>
-          SchoolMate provides a secure, cloud-based ERP platform designed to protect institutional
+          schoolmate provides a secure, cloud-based ERP platform designed to protect institutional
           data and keep operations reliable across attendance, fees, academics, and communication
           workflows.
         </p>

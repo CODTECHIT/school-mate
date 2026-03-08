@@ -1,5 +1,5 @@
 .stats {
-  padding: 80px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #1a2a4a 0%, #2856a3 50%, #5b2d8e 100%);
   position: relative;
 }
@@ -21,11 +21,9 @@
   border-radius: 16px;
   padding: 18px 12px;
   border: 1px solid color-mix(in srgb, var(--accent-start) 28%, rgba(255, 255, 255, 0.15));
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-start) 14%, rgba(255, 255, 255, 0.08)),
-    color-mix(in srgb, var(--accent-end) 10%, rgba(255, 255, 255, 0.05))
-  );
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent-start) 14%, rgba(255, 255, 255, 0.08)),
+      color-mix(in srgb, var(--accent-end) 10%, rgba(255, 255, 255, 0.05)));
   transition: all 0.3s ease;
 }
 
@@ -39,11 +37,9 @@
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-start) 32%, transparent),
-    color-mix(in srgb, var(--accent-end) 30%, transparent)
-  );
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent-start) 32%, transparent),
+      color-mix(in srgb, var(--accent-end) 30%, transparent));
   display: flex;
   align-items: center;
   justify-content: center;

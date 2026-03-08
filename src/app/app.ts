@@ -4,14 +4,16 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, ScrollToTopComponent],
   template: `
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
+    <app-scroll-to-top></app-scroll-to-top>
     <app-footer></app-footer>
   `,
 })
@@ -19,7 +21,7 @@ export class App {
   private observer: IntersectionObserver | null = null;
   private routeSubscription: Subscription | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngAfterViewInit(): void {
     if (typeof window === 'undefined') {

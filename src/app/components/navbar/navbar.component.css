@@ -203,15 +203,18 @@
 
 .app-modal-content {
   background: white;
-  padding: 40px;
+  padding: 30px;
   border-radius: 24px;
-  max-width: 450px;
-  width: 90%;
+  max-width: 900px;
+  width: 95%;
   position: relative;
-  text-align: center;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   transform: translateY(0);
   animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.demo-modal {
+  max-width: 500px;
 }
 
 .modal-close {
@@ -228,6 +231,7 @@
   justify-content: center;
   cursor: pointer;
   color: #1a2a4a;
+  z-index: 10;
   transition: 0.3s;
 }
 
@@ -236,39 +240,122 @@
   color: white;
 }
 
-.modal-body h3 {
-  font-size: 1.8rem;
+/* Improved App Download Modal Grid */
+.app-download-body {
+  padding: 0 !important;
+}
+
+.app-download-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.app-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.download-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #2856a3;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.app-column h4 {
+  font-size: 1.4rem;
   color: #1a2a4a;
-  margin-bottom: 12px;
+  margin: 0 0 6px;
+  font-weight: 800;
 }
 
-.modal-body p {
+.app-column p {
+  font-size: 0.9rem;
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
-.qr-container {
-  background: #f8f9fa;
-  padding: 20px;
+.qr-box {
+  background: #fcfdfe;
+  padding: 16px;
   border-radius: 16px;
-  display: inline-block;
-  margin-bottom: 30px;
-  border: 1px solid #eee;
+  border: 1px solid #eef2f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.qr-container img {
-  max-width: 250px;
+.qr-box img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.qr-box span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a2a4a;
+}
+
+.play-store-btn img {
+  height: 48px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play-store-btn:hover img {
+  transform: scale(1.1);
+}
+
+.app-phone-column {
+  display: flex;
+  justify-content: center;
+}
+
+.center-phone {
+  width: 100%;
+  max-width: 260px;
   height: auto;
-  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
+  animation: modalPhoneFloat 4s ease-in-out infinite;
 }
 
-.modal-actions .app-badge-btn img {
-  height: 50px;
-  transition: transform 0.3s;
+@keyframes modalPhoneFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
-.modal-actions .app-badge-btn:hover img {
-  transform: scale(1.05);
+@media (max-width: 850px) {
+  .app-download-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .app-phone-column {
+    order: -1;
+  }
+
+  .center-phone {
+    max-width: 180px;
+  }
 }
 
 .demo-modal {
@@ -474,5 +561,39 @@
 
   .qr-container img {
     max-width: 200px;
+  }
+}
+
+.highlight-sms {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, #ff4c4c, #fb7185);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  margin-left: 8px;
+  box-shadow: 0 4px 15px rgba(255, 76, 76, 0.35);
+  animation: sms-pulse 2.5s infinite ease-in-out;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+@keyframes sms-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

@@ -27,7 +27,7 @@ export class ClientDataUtil {
             name: 'Principal',
             role: 'School Administrator',
             school: 'NPDC School',
-            quote: 'SchoolMate has completely transformed how we manage our school operations. From attendance to fee management, everything is now streamlined and efficient.',
+            quote: 'schoolmate has completely transformed how we manage our school operations. From attendance to fee management, everything is now streamlined and efficient.',
         },
         {
             name: 'Director',
@@ -39,13 +39,13 @@ export class ClientDataUtil {
             name: 'Administrator',
             role: 'School Admin',
             school: 'Gitanjali School',
-            quote: 'SchoolMate makes school administration effortless. The mobile app keeps parents connected and informed about their children\'s progress.',
+            quote: 'schoolmate makes school administration effortless. The mobile app keeps parents connected and informed about their children\'s progress.',
         },
         {
             name: 'Principal',
             role: 'School Head',
             school: 'Santhinikethan School',
-            quote: 'We switched to SchoolMate and saw immediate improvements in our daily operations. Highly recommend it to all educational institutions.',
+            quote: 'We switched to schoolmate and saw immediate improvements in our daily operations. Highly recommend it to all educational institutions.',
         },
     ];
 

@@ -48,6 +48,7 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
@@ -101,6 +102,7 @@
 }
 
 @keyframes pulse-dot {
+
   0%,
   100% {
     opacity: 1;
@@ -209,6 +211,18 @@
   left: -8px;
 }
 
+.preview-card.three {
+  top: 25%;
+  left: -40px;
+  animation: heroFloat 5s ease-in-out infinite 0.5s;
+}
+
+.preview-card.four {
+  bottom: 15%;
+  right: -30px;
+  animation: heroFloat 6s ease-in-out infinite 1s;
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -270,6 +284,7 @@
 }
 
 @keyframes heroFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -307,11 +322,9 @@
 }
 
 .stat-card:hover {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--accent-start) 14%, rgba(255, 255, 255, 0.14)),
-    color-mix(in srgb, var(--accent-end) 10%, rgba(255, 255, 255, 0.08))
-  );
+  background: linear-gradient(145deg,
+      color-mix(in srgb, var(--accent-start) 14%, rgba(255, 255, 255, 0.14)),
+      color-mix(in srgb, var(--accent-end) 10%, rgba(255, 255, 255, 0.08)));
   border-color: color-mix(in srgb, var(--accent-start) 45%, rgba(255, 255, 255, 0.3));
   transform: translateY(-4px);
   box-shadow: 0 16px 34px color-mix(in srgb, var(--accent-start) 26%, rgba(9, 18, 42, 0.35));
@@ -409,11 +422,18 @@
   }
 
   .preview-card.one {
+    top: 30px;
     right: 12px;
   }
 
   .preview-card.two {
+    bottom: 30px;
     left: 10px;
+  }
+
+  .preview-card.three,
+  .preview-card.four {
+    display: none;
   }
 
   .laptop-mockup img {

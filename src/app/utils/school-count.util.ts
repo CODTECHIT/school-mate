@@ -12,7 +12,7 @@ export class SchoolCountUtil {
     }
 
     static getModuleCount(): number {
-        return 40;
+        return 100;
     }
 
     static getClientRetention(): number {

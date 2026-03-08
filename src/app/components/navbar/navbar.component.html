@@ -1,7 +1,7 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="nav-container">
     <a class="nav-logo" routerLink="/">
-      <img src="logo.png" alt="SchoolMate Logo" />
+      <img src="logo.png" alt="schoolmate Logo" />
     </a>
 
     <ul class="nav-links" [class.active]="isMobileMenuOpen">
@@ -66,24 +66,56 @@
       <button class="modal-close" (click)="closeAppModal()">
         <span class="material-icon">close</span>
       </button>
-      <div class="modal-body">
-        <h3>Download SchoolMate App</h3>
-        <p>Scan the QR code or click to download the app for your device.</p>
-        <div class="qr-container">
-          <img src="app-qr.png" alt="Download App QR Code" />
-        </div>
-        <div class="modal-actions">
-          <a
-            href="https://play.google.com/store/apps/details?id=com.schoolmate.student"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="app-badge-btn"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Google Play"
-            />
-          </a>
+      <div class="modal-body app-download-body">
+        <div class="app-download-grid">
+          <!-- Student App -->
+          <div class="app-column">
+            <span class="download-label">DOWNLOAD</span>
+            <h4>Schoolmate Student App</h4>
+            <p>for students & parents</p>
+            <div class="qr-box">
+              <img src="images/app1.png" alt="Student App QR Code" />
+              <span>Scan QR Code</span>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.schoolmate.student"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="play-store-btn"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
+              />
+            </a>
+          </div>
+
+          <!-- Middle Phone -->
+          <div class="app-phone-column">
+            <img src="images/mobile3.png" alt="Schoolmate Mobile App" class="center-phone" />
+          </div>
+
+          <!-- Employee App -->
+          <div class="app-column">
+            <span class="download-label">DOWNLOAD</span>
+            <h4>Schoolmate Employee App</h4>
+            <p>for teachers, admin, principal & employees</p>
+            <div class="qr-box">
+              <img src="images/app2.png" alt="Employee App QR Code" />
+              <span>Scan QR Code</span>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.schoolmate.student"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="play-store-btn"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -99,8 +131,8 @@
         <span class="modal-badge">Get All Mobile Apps For FREE</span>
         <h3>Get A Free Demo</h3>
         <p>
-          Please fill the details below and get the 'demo' credentials for SchoolMate school
-          management software.
+          Please fill the details below and get the 'demo' credentials for schoolmate school
+          management software. <span class="highlight-sms">5000 FREE SMS</span>
         </p>
 
         <form class="demo-form">

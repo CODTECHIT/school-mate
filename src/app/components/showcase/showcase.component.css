@@ -1,6 +1,6 @@
 .showcase {
-  padding: 100px 0;
-  background: #ffffff;
+  padding: 60px 0;
+  background: radial-gradient(circle at center, #ffffff 0%, #eeeaff 100%);
 }
 
 .section-container {
@@ -94,11 +94,9 @@
 }
 
 .image-wrap {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-start) 12%, white),
-    color-mix(in srgb, var(--accent-end) 10%, white)
-  );
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent-start) 12%, white),
+      color-mix(in srgb, var(--accent-end) 10%, white));
   padding: 12px;
 }
 

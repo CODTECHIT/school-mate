@@ -14,7 +14,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
       <div class="container legal-content">
         <h2>Our Terms and Conditions</h2>
         <p>
-          SchoolMate provides a cloud-based ERP platform for secure and streamlined school
+          schoolmate provides a cloud-based ERP platform for secure and streamlined school
           administration. By using the service, users agree to the terms below.
         </p>
 
@@ -22,12 +22,12 @@ import { CtaComponent } from '../../components/cta/cta.component';
         <ul>
           <li>Use the service only for legal and ethical activities.</li>
           <li>Keep account credentials confidential and do not share login access.</li>
-          <li>Follow subscription, payment, and renewal terms as agreed with SchoolMate.</li>
+          <li>Follow subscription, payment, and renewal terms as agreed with schoolmate.</li>
         </ul>
 
         <h3>Restrictions and Suspension</h3>
         <p>
-          SchoolMate reserves the right to modify features, restrict access, or suspend services in
+          schoolmate reserves the right to modify features, restrict access, or suspend services in
           cases of policy violations, misuse, or required maintenance.
         </p>
 

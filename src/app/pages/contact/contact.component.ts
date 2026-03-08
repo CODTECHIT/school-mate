@@ -65,7 +65,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
                   >Instagram</a
                 >
                 <a
-                  href="https://www.facebook.com/people/Schoolmate-ERP-Software/61563897116374/?sk=about"
+                  href="https://www.facebook.com/people/schoolmate-ERP-Software/61563897116374/?sk=about"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Facebook</a

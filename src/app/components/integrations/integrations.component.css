@@ -1,5 +1,5 @@
 .integrations {
-  padding: 100px 0;
+  padding: 60px 0;
   background: linear-gradient(180deg, #f8f9fc 0%, #fff 100%);
 }
 
@@ -75,11 +75,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--accent-start) 12%, transparent),
-    color-mix(in srgb, var(--accent-end) 10%, transparent)
-  );
+  background: linear-gradient(145deg,
+      color-mix(in srgb, var(--accent-start) 12%, transparent),
+      color-mix(in srgb, var(--accent-end) 10%, transparent));
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -103,11 +101,9 @@
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    var(--accent-soft),
-    color-mix(in srgb, var(--accent-end) 14%, transparent)
-  );
+  background: linear-gradient(135deg,
+      var(--accent-soft),
+      color-mix(in srgb, var(--accent-end) 14%, transparent));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,98 +189,47 @@
 }
 
 .integrations-visual {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  background: linear-gradient(135deg, #1a2a4a, #2856a3);
-  border-radius: 24px;
-  padding: 60px;
-  overflow: hidden;
-}
-
-.integrations-visual img {
-  width: 220px;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-  animation: phoneFloat 3s ease-in-out infinite;
-}
-
-@keyframes phoneFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.visual-text h3 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 16px;
-}
-
-.visual-text p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.7;
-  margin: 0 0 24px;
-}
-
-.app-badges {
-  display: flex;
-  gap: 12px;
-}
-
-.app-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
   background: transparent;
-  border: 0;
-  border-radius: 10px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+}
+
+.download-link {
+  display: block;
+  width: 100%;
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-.app-badge:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.04);
-}
-
-.app-badge img {
-  width: 180px;
+.download-img {
+  width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.app-badge:active {
-  transform: translateY(-1px);
+.integrations-visual:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 80px rgba(40, 86, 163, 0.15);
+}
+
+.integrations-visual:hover .download-img {
+  transform: scale(1.02);
 }
 
 @media (max-width: 1024px) {
   .integrations-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
+@media (max-width: 768px) {
   .integrations-visual {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 30px;
-    gap: 30px;
-  }
-
-  .visual-text h3 {
-    font-size: 1.4rem;
-  }
-
-  .app-badges {
-    justify-content: center;
+    border-radius: 16px;
   }
 }
 
@@ -321,10 +266,6 @@
   .integration-card p {
     font-size: 0.76rem;
   }
-
-  .integrations-visual img {
-    width: 160px;
-  }
 }
 
 @media (max-width: 420px) {
@@ -351,18 +292,5 @@
   .integration-card p {
     font-size: 0.7rem;
     line-height: 1.3;
-  }
-
-  .app-badges {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .app-badge {
-    justify-content: center;
-  }
-
-  .app-badge img {
-    width: 170px;
   }
 }

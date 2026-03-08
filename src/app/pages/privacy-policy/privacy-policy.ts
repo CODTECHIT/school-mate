@@ -14,7 +14,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
       <div class="container legal-content">
         <h2>Our Privacy Policy</h2>
         <p>
-          SchoolMate explains how personal information is collected, used, shared, and protected,
+          schoolmate explains how personal information is collected, used, shared, and protected,
           and what choices users have with respect to their data.
         </p>
 

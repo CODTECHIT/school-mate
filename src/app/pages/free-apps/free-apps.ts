@@ -12,9 +12,9 @@ import { CtaComponent } from '../../components/cta/cta.component';
     </div>
     <div class="page-content">
       <div class="container">
-        <h2>SchoolMate <span class="highlight">Mobile Apps</span></h2>
+        <h2>schoolmate <span class="highlight">Mobile Apps</span></h2>
         <p>
-          SchoolMate's mobile apps deliver a complete school management experience for parents,
+          schoolmate's mobile apps deliver a complete school management experience for parents,
           teachers, transport drivers, and administrators with role-based access.
         </p>
         <p>

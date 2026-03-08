@@ -1,6 +1,6 @@
 .clients {
-  padding: 100px 0;
-  background: #fff;
+  padding: 60px 0;
+  background: #eef2f6;
 }
 
 .section-container {
@@ -55,13 +55,11 @@
   margin-bottom: 60px;
   padding: 20px 0;
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%);
 }
 
 .logo-track {
@@ -101,12 +99,10 @@
   transform: scale(1.08);
   box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-start) 22%, transparent);
   border-color: color-mix(in srgb, var(--accent-start) 35%, transparent);
-  background: linear-gradient(
-    135deg,
-    #fff,
-    color-mix(in srgb, var(--accent-start) 10%, white),
-    color-mix(in srgb, var(--accent-end) 8%, white)
-  );
+  background: linear-gradient(135deg,
+      #fff,
+      color-mix(in srgb, var(--accent-start) 10%, white),
+      color-mix(in srgb, var(--accent-end) 8%, white));
 }
 
 .logo-item img {
@@ -142,11 +138,9 @@
 .testimonial-card:hover {
   border-color: color-mix(in srgb, var(--accent-start) 38%, transparent);
   box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-start) 26%, transparent);
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-start) 15%, white),
-    color-mix(in srgb, var(--accent-end) 10%, white)
-  );
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent-start) 15%, white),
+      color-mix(in srgb, var(--accent-end) 10%, white));
 }
 
 .quote-icon {

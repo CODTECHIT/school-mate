@@ -12,9 +12,9 @@ import { CtaComponent } from '../../components/cta/cta.component';
     </div>
     <div class="page-content">
       <div class="container">
-        <h2>SchoolMate <span class="highlight">Updates</span></h2>
+        <h2>schoolmate <span class="highlight">Updates</span></h2>
         <p>
-          SchoolMate continues to expand as a complete digital ecosystem for schools and colleges,
+          schoolmate continues to expand as a complete digital ecosystem for schools and colleges,
           supporting academics, attendance, fees, transport, and examination workflows in one
           platform.
         </p>
