@@ -12,13 +12,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
+  z-index: 10002;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  pointer-events: none;
   box-shadow: 0 4px 20px rgba(40, 86, 163, 0.4);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .scroll-to-top:hover {
