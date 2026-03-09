@@ -5,6 +5,7 @@ import { filter, Subscription } from 'rxjs';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -74,9 +75,14 @@ export class App {
   private routeSubscription: Subscription | null = null;
   private isFirstNavigationEvent = true;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private seoService: SeoService,
+  ) {}
 
   ngAfterViewInit(): void {
+    this.seoService.updateForUrl(this.router.url);
+
     if (typeof window === 'undefined') {
       return;
     }
@@ -87,6 +93,8 @@ export class App {
     this.routeSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
+        this.seoService.updateForUrl(this.router.url);
+
         // Skip the initial router event on app bootstrap to avoid refresh scroll jump.
         if (this.isFirstNavigationEvent) {
           this.isFirstNavigationEvent = false;
