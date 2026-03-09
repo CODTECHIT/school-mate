@@ -1,55 +1,49 @@
 .scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2856A3 0%, #5B2D8E 100%);
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.5);
-    box-shadow: 0 4px 20px rgba(40, 86, 163, 0.4);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none;
-}
-
-.scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2856a3 0%, #5b2d8e 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  box-shadow: 0 4px 20px rgba(40, 86, 163, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
 }
 
 .scroll-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(40, 86, 163, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(40, 86, 163, 0.5);
 }
 
 .scroll-to-top:active {
-    transform: translateY(0) scale(0.95);
+  transform: translateY(0) scale(0.95);
 }
 
 .scroll-to-top .material-icons {
-    font-size: 32px;
-    font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-    .scroll-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 48px;
-        height: 48px;
-    }
+  .scroll-to-top {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+    right: calc(env(safe-area-inset-right, 0px) + 16px);
+    width: 48px;
+    height: 48px;
+  }
 
-    .scroll-to-top .material-icons {
-        font-size: 24px;
-    }
+  .scroll-to-top .material-icons {
+    font-size: 24px;
+  }
 }
