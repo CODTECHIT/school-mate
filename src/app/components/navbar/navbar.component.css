@@ -3,17 +3,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  padding: 0;
+  z-index: 9999 !important;
+  padding: 5px 0;
   transition: all 0.3s ease;
   background: transparent;
 }
 
 .navbar.scrolled,
 .navbar.is-pricing-page {
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 5px 0;
+  background: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 .navbar.scrolled .nav-links li a,
@@ -124,8 +123,8 @@
 }
 
 /* Specific styling for Pricing in nav links when scrolled (to look like a button) */
-.navbar.scrolled .nav-links li a[routerLink="/pricing"],
-.navbar.is-pricing-page .nav-links li a[routerLink="/pricing"] {
+.navbar.scrolled .nav-links li a[routerLink='/pricing'],
+.navbar.is-pricing-page .nav-links li a[routerLink='/pricing'] {
   background: rgba(40, 86, 163, 0.05);
   border: 1px solid rgba(40, 86, 163, 0.2);
   color: #2856a3;
@@ -182,7 +181,12 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  z-index: 1001;
+  z-index: 10001;
+  /* Higher than drawer */
+}
+
+.mobile-close-btn {
+  display: none;
 }
 
 .hamburger span {
@@ -193,8 +197,9 @@
   transition: all 0.3s ease;
 }
 
-.navbar.scrolled .hamburger span {
-  background: #1f2a44;
+.navbar.scrolled .hamburger span,
+.hamburger.active span {
+  background: #1f2a44 !important;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -239,8 +244,8 @@
 .navbar.scrolled .btn-dashboard-header,
 .navbar.is-pricing-page .btn-dashboard-header {
   color: #5b2d8e;
-  background: rgba(91, 45, 142, 0.05);
-  border: 1px solid rgba(91, 45, 142, 0.2);
+  background: rgba(91, 45, 142, 0.12);
+  border: 1px solid rgba(91, 45, 142, 0.35);
 }
 
 .navbar.scrolled .btn-dashboard-header:hover,
@@ -273,9 +278,9 @@
 /* Scrolled state */
 .navbar.scrolled .btn-app,
 .navbar.is-pricing-page .btn-app {
-  background: rgba(40, 86, 163, 0.05);
+  background: rgba(40, 86, 163, 0.12);
   color: #2856a3;
-  border: 1px solid rgba(40, 86, 163, 0.2);
+  border: 1px solid rgba(40, 86, 163, 0.35);
 }
 
 .navbar.scrolled .btn-app:hover,
@@ -310,6 +315,37 @@
 
   .hamburger {
     display: flex;
+  }
+
+  .mobile-close-btn {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f0f2f5;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-close-btn .material-icon {
+    color: #1a2a4a !important;
+    font-size: 24px;
+  }
+
+  .mobile-close-btn:hover {
+    background: #2856a3;
+  }
+
+  .mobile-close-btn:hover .material-icon {
+    color: white !important;
   }
 
   .nav-links {
@@ -552,7 +588,6 @@
 }
 
 @keyframes modalPhoneFloat {
-
   0%,
   100% {
     transform: translateY(0);

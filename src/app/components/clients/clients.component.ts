@@ -1,31 +1,26 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientDataUtil, ClientLogo, Testimonial } from '../../utils/client-data.util';
 
 @Component({
-    selector: 'app-clients',
-    standalone: true,
-    imports: [CommonModule],
-    templateUrl: './clients.component.html',
-    styleUrl: './clients.component.css'
+  selector: 'app-clients',
+  imports: [CommonModule],
+  templateUrl: './clients.component.html',
+  styleUrl: './clients.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ClientsComponent {
-    clientLogos: ClientLogo[] = ClientDataUtil.getClientLogos();
-    testimonials: Testimonial[] = ClientDataUtil.getTestimonials();
-    activeTestimonial = 0;
+  readonly clientLogos: ClientLogo[] = ClientDataUtil.getClientLogos();
+  readonly testimonials: Testimonial[] = ClientDataUtil.getTestimonials();
+  readonly duplicatedLogos: ClientLogo[] = [...this.clientLogos, ...this.clientLogos];
+  activeTestimonial = 0;
 
-    // Duplicate logos for infinite scroll effect
-    get duplicatedLogos(): ClientLogo[] {
-        return [...this.clientLogos, ...this.clientLogos];
-    }
+  nextTestimonial(): void {
+    this.activeTestimonial = (this.activeTestimonial + 1) % this.testimonials.length;
+  }
 
-    nextTestimonial() {
-        this.activeTestimonial = (this.activeTestimonial + 1) % this.testimonials.length;
-    }
-
-    prevTestimonial() {
-        this.activeTestimonial = this.activeTestimonial === 0
-            ? this.testimonials.length - 1
-            : this.activeTestimonial - 1;
-    }
+  prevTestimonial(): void {
+    this.activeTestimonial =
+      this.activeTestimonial === 0 ? this.testimonials.length - 1 : this.activeTestimonial - 1;
+  }
 }
